@@ -24,3 +24,17 @@ C:\Users\lhcpg\source\repos\CantStop\Cant stop\obj\Debug\Cant stop.csproj.CoreCo
 C:\Users\lhcpg\source\repos\CantStop\Cant stop\obj\Debug\Cant stop.csproj.CopyComplete
 C:\Users\lhcpg\source\repos\CantStop\Cant stop\obj\Debug\Cant stop.exe
 C:\Users\lhcpg\source\repos\CantStop\Cant stop\obj\Debug\Cant stop.pdb
+C:\CantStop\Cant stop\bin\Debug\Cant stop.exe.config
+C:\CantStop\Cant stop\bin\Debug\Cant stop.exe
+C:\CantStop\Cant stop\bin\Debug\Cant stop.pdb
+C:\CantStop\Cant stop\bin\Debug\CantStopServer.dll
+C:\CantStop\Cant stop\bin\Debug\CantStopServer.xml
+C:\CantStop\Cant stop\obj\Debug\Cant stop.csprojAssemblyReference.cache
+C:\CantStop\Cant stop\obj\Debug\Cant_stop.Properties.Resources.resources
+C:\CantStop\Cant stop\obj\Debug\Cant stop.csproj.GenerateResource.cache
+C:\CantStop\Cant stop\obj\Debug\Cant stop.csproj.CoreCompileInputs.cache
+C:\CantStop\Cant stop\obj\Debug\Cant stop.csproj.CopyComplete
+C:\CantStop\Cant stop\obj\Debug\Cant stop.exe
+C:\CantStop\Cant stop\obj\Debug\Cant stop.pdb
+C:\CantStop\Cant stop\obj\Debug\Cant_stop.Lobby.resources
+C:\CantStop\Cant stop\obj\Debug\Cant_stop.Tabuleiro.resources
