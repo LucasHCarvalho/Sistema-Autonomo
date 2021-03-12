@@ -38,3 +38,17 @@ C:\CantStop\Cant stop\obj\Debug\Cant stop.exe
 C:\CantStop\Cant stop\obj\Debug\Cant stop.pdb
 C:\CantStop\Cant stop\obj\Debug\Cant_stop.Lobby.resources
 C:\CantStop\Cant stop\obj\Debug\Cant_stop.Tabuleiro.resources
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\bin\Debug\Cant stop.exe.config
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\bin\Debug\Cant stop.exe
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\bin\Debug\Cant stop.pdb
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\bin\Debug\CantStopServer.dll
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\bin\Debug\CantStopServer.xml
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant stop.csprojAssemblyReference.cache
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant_stop.Lobby.resources
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant_stop.Properties.Resources.resources
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant_stop.Tabuleiro.resources
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant stop.csproj.GenerateResource.cache
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant stop.csproj.CoreCompileInputs.cache
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant stop.csproj.CopyComplete
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant stop.exe
+C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant stop.pdb
