@@ -100,12 +100,19 @@ namespace Cant_stop
         {
             string lista = lblTratativaErro.Text.ToString();
             string[] itens = lista.Split(',');
+            string res = lblTratativaErro.Text.ToString().Substring(0, 1);
+            if(res == "E")
+            {
+                MessageBox.Show("Erro: Senha de acesso para iniciar partida incorreto", "Senha incorreta",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else { 
             this.IdJogador = Convert.ToInt32(itens[0]);
             this.senhaJogador = itens[1];
             MessageBox.Show(this.senhaJogador);
             string partida = Jogo.IniciarPartida(IdJogador, senhaJogador);
             inGame ingame = new inGame();
             ingame.ShowDialog();
+            }
         }
 
         private void lblTratativaErro_Click(object sender, EventArgs e)
