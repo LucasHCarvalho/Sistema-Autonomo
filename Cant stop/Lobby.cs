@@ -47,6 +47,7 @@ namespace Cant_stop
         private void btnCriar_Click(object sender, EventArgs e)
         {
            string criarPartida = Jogo.CriarPartida(txtCriarPartida.Text, txtSenhaPartida.Text);
+            lblTratativaErro.Text = criarPartida;
         }
 
         private void btnListaJogadores_Click(object sender, EventArgs e)

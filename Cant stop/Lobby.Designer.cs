@@ -46,6 +46,7 @@ namespace Cant_stop
             this.lblVersao = new System.Windows.Forms.Label();
             this.btnIniciarPartida = new System.Windows.Forms.Button();
             this.lblTratativaErro = new System.Windows.Forms.Label();
+            this.lblCriarErro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnMostraLista
@@ -221,12 +222,22 @@ namespace Cant_stop
             this.lblTratativaErro.TabIndex = 18;
             this.lblTratativaErro.Click += new System.EventHandler(this.lblTratativaErro_Click);
             // 
+            // lblCriarErro
+            // 
+            this.lblCriarErro.AutoSize = true;
+            this.lblCriarErro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCriarErro.Location = new System.Drawing.Point(383, 301);
+            this.lblCriarErro.Name = "lblCriarErro";
+            this.lblCriarErro.Size = new System.Drawing.Size(0, 20);
+            this.lblCriarErro.TabIndex = 19;
+            // 
             // Lobby
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1276, 498);
+            this.Controls.Add(this.lblCriarErro);
             this.Controls.Add(this.lblTratativaErro);
             this.Controls.Add(this.btnIniciarPartida);
             this.Controls.Add(this.lblVersao);
@@ -273,6 +284,7 @@ namespace Cant_stop
         private System.Windows.Forms.Label lblVersao;
         private System.Windows.Forms.Button btnIniciarPartida;
         private System.Windows.Forms.Label lblTratativaErro;
+        private System.Windows.Forms.Label lblCriarErro;
     }
 }
 
