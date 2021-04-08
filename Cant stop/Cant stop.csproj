@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,6 +79,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -91,6 +93,46 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagens\dado1.jpg" />
+    <Content Include="Imagens\dado2.jpg" />
+    <Content Include="Imagens\dado3.jpg" />
+    <Content Include="Imagens\dado4.jpg" />
+    <Content Include="Imagens\dado5.jpg" />
+    <Content Include="Imagens\dado6.jpg" />
+    <None Include="Resources\jogador4amarelo.png" />
+    <None Include="Resources\jogador3verde.png" />
+    <None Include="Resources\jogador2azul.png" />
+    <None Include="Resources\jogador1vermelho3.png" />
+    <None Include="Resources\jogador1vermelho2.png" />
+    <None Include="Resources\jogador1vermelho1.png" />
+    <None Include="Resources\jogador1vermelho.png" />
+    <None Include="Resources\background.jpg" />
+    <None Include="Resources\12 invertida.png" />
+    <None Include="Resources\12.png" />
+    <None Include="Resources\11 invertido.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\10 invertido.png" />
+    <None Include="Resources\10.png" />
+    <None Include="Resources\9 invertido.png" />
+    <None Include="Resources\9.png" />
+    <None Include="Resources\8 invertido.png" />
+    <None Include="Resources\8.png" />
+    <None Include="Resources\7 invertido.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\6 invertido.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\5 invertido.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\4 invertido.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\3 invertido.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\2 invertido.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\celula.png" />
+    <None Include="Imagens\tabuleiro.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

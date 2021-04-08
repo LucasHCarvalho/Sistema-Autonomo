@@ -13,9 +13,9 @@ namespace Cant_stop
 {
     public partial class Lobby : Form
     {        
-        public int IdPartida{ get; set; }
-        public int IdJogador { get; set; }
-        public String senhaJogador { get; set; }
+        public static int IdPartida{ get; set; }
+        public static int IdJogador { get; set; }
+        public static string senhaJogador { get; set; }
         public Lobby()
         {
             InitializeComponent();
@@ -39,14 +39,14 @@ namespace Cant_stop
         {
             string linha = lstListarPartidas.SelectedItem.ToString();
             string[] itens = linha.Split(',');
-            this.IdPartida = Convert.ToInt32(itens[0]);
-            string entrar = Jogo.EntrarPartida(this.IdPartida, txtNomeJogador.Text, txtSenha.Text);
+            IdPartida = Convert.ToInt32(itens[0]);
+            string entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenha.Text);
             lblTratativaErro.Text = entrar;
     }
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
-           string criarPartida = Jogo.CriarPartida(txtCriarPartida.Text, txtSenhaPartida.Text);
+            string criarPartida = Jogo.CriarPartida(txtCriarPartida.Text, txtSenhaPartida.Text);
             lblTratativaErro.Text = criarPartida;
         }
 
@@ -54,9 +54,9 @@ namespace Cant_stop
         {
             string linha = lstListarPartidas.SelectedItem.ToString();
             string[] itens = linha.Split(',');
-            this.IdPartida = Convert.ToInt32(itens[0]);
+            IdPartida = Convert.ToInt32(itens[0]);
             
-            string listajogadores = Jogo.ListarJogadores(this.IdPartida);
+            string listajogadores = Jogo.ListarJogadores(IdPartida);
             /*listajogadores = listajogadores.Replace("\r", "");*/
             string[] espaco = listajogadores.Split('\n');
             lstListaJogadores.Items.Clear();
@@ -107,9 +107,9 @@ namespace Cant_stop
                 MessageBox.Show("Erro: Senha de acesso para iniciar partida incorreto", "Senha incorreta",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else { 
-            this.IdJogador = Convert.ToInt32(itens[0]);
-            this.senhaJogador = itens[1];
-            MessageBox.Show(this.senhaJogador);
+            IdJogador = Convert.ToInt32(itens[0]);
+            senhaJogador = itens[1];
+            MessageBox.Show(senhaJogador);
             string partida = Jogo.IniciarPartida(IdJogador, senhaJogador);
             inGame ingame = new inGame();
             ingame.ShowDialog();

@@ -52,3 +52,17 @@ C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant stop.csproj.Cop
 C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant stop.exe
 C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant stop.pdb
 C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\obj\Debug\Cant_stop.inGame.resources
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\bin\Debug\Cant stop.exe.config
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\bin\Debug\Cant stop.exe
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\bin\Debug\Cant stop.pdb
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\bin\Debug\CantStopServer.dll
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\bin\Debug\CantStopServer.xml
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant stop.csprojAssemblyReference.cache
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant_stop.inGame.resources
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant_stop.Lobby.resources
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant_stop.Properties.Resources.resources
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant stop.csproj.GenerateResource.cache
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant stop.csproj.CoreCompileInputs.cache
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant stop.csproj.CopyComplete
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant stop.exe
+C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant stop.pdb
