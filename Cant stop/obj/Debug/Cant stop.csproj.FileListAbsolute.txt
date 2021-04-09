@@ -37,7 +37,6 @@ C:\CantStop\Cant stop\obj\Debug\Cant stop.csproj.CopyComplete
 C:\CantStop\Cant stop\obj\Debug\Cant stop.exe
 C:\CantStop\Cant stop\obj\Debug\Cant stop.pdb
 C:\CantStop\Cant stop\obj\Debug\Cant_stop.Lobby.resources
-C:\CantStop\Cant stop\obj\Debug\Cant_stop.Tabuleiro.resources
 C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\bin\Debug\Cant stop.exe.config
 C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\bin\Debug\Cant stop.exe
 C:\Users\dmcsh\Desktop\Sistema-Autonomo\Cant stop\bin\Debug\Cant stop.pdb
@@ -66,3 +65,4 @@ C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant stop.csproj.Co
 C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant stop.csproj.CopyComplete
 C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant stop.exe
 C:\Users\Vand\Desktop\Toronto\Nova pasta\Cant stop\obj\Debug\Cant stop.pdb
+C:\CantStop\Cant stop\obj\Debug\Cant_stop.inGame.resources
