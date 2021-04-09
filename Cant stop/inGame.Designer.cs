@@ -34,7 +34,6 @@ namespace Cant_stop
             this.btnVerificar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
@@ -116,6 +115,7 @@ namespace Cant_stop
             this.pictureBox82 = new System.Windows.Forms.PictureBox();
             this.pictureBox83 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.picDado2 = new System.Windows.Forms.PictureBox();
             this.picDado3 = new System.Windows.Forms.PictureBox();
             this.picDado1 = new System.Windows.Forms.PictureBox();
@@ -129,15 +129,14 @@ namespace Cant_stop
             this.btnD1d4 = new System.Windows.Forms.Button();
             this.btnD2d3 = new System.Windows.Forms.Button();
             this.lblCor = new System.Windows.Forms.Label();
-            this.picPecaVermelha = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox85 = new System.Windows.Forms.PictureBox();
+            this.picPecaVermelha2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.picPecaVermelha1 = new System.Windows.Forms.PictureBox();
+            this.picPecaVermelha3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -219,13 +218,14 @@ namespace Cant_stop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox82)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox83)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox85)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRolarDados
@@ -385,16 +385,6 @@ namespace Cant_stop
             this.pictureBox11.Size = new System.Drawing.Size(53, 41);
             this.pictureBox11.TabIndex = 11;
             this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BackgroundImage = global::Cant_stop.Properties.Resources._7_invertido;
-            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox10.Location = new System.Drawing.Point(298, 578);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(53, 43);
-            this.pictureBox10.TabIndex = 10;
-            this.pictureBox10.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -1213,6 +1203,16 @@ namespace Cant_stop
             this.pictureBox17.TabIndex = 144;
             this.pictureBox17.TabStop = false;
             // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackgroundImage = global::Cant_stop.Properties.Resources._7_invertido;
+            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox10.Location = new System.Drawing.Point(298, 578);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(53, 43);
+            this.pictureBox10.TabIndex = 10;
+            this.pictureBox10.TabStop = false;
+            // 
             // picDado2
             // 
             this.picDado2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1258,7 +1258,7 @@ namespace Cant_stop
             // 
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStop.Location = new System.Drawing.Point(921, 570);
-            this.btnStop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(2);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(127, 71);
             this.btnStop.TabIndex = 145;
@@ -1280,7 +1280,7 @@ namespace Cant_stop
             // btnD1d2
             // 
             this.btnD1d2.Location = new System.Drawing.Point(2, 474);
-            this.btnD1d2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnD1d2.Margin = new System.Windows.Forms.Padding(2);
             this.btnD1d2.Name = "btnD1d2";
             this.btnD1d2.Size = new System.Drawing.Size(85, 36);
             this.btnD1d2.TabIndex = 147;
@@ -1290,7 +1290,7 @@ namespace Cant_stop
             // btnD3d4
             // 
             this.btnD3d4.Location = new System.Drawing.Point(92, 474);
-            this.btnD3d4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnD3d4.Margin = new System.Windows.Forms.Padding(2);
             this.btnD3d4.Name = "btnD3d4";
             this.btnD3d4.Size = new System.Drawing.Size(85, 35);
             this.btnD3d4.TabIndex = 148;
@@ -1300,18 +1300,17 @@ namespace Cant_stop
             // btnD1d3
             // 
             this.btnD1d3.Location = new System.Drawing.Point(2, 514);
-            this.btnD1d3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnD1d3.Margin = new System.Windows.Forms.Padding(2);
             this.btnD1d3.Name = "btnD1d3";
             this.btnD1d3.Size = new System.Drawing.Size(85, 37);
             this.btnD1d3.TabIndex = 149;
-            this.btnD1d3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnD1d3.UseVisualStyleBackColor = true;
             this.btnD1d3.Click += new System.EventHandler(this.btnD1d3_Click);
             // 
             // btnD2d4
             // 
             this.btnD2d4.Location = new System.Drawing.Point(92, 514);
-            this.btnD2d4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnD2d4.Margin = new System.Windows.Forms.Padding(2);
             this.btnD2d4.Name = "btnD2d4";
             this.btnD2d4.Size = new System.Drawing.Size(85, 37);
             this.btnD2d4.TabIndex = 150;
@@ -1321,7 +1320,7 @@ namespace Cant_stop
             // btnD1d4
             // 
             this.btnD1d4.Location = new System.Drawing.Point(2, 556);
-            this.btnD1d4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnD1d4.Margin = new System.Windows.Forms.Padding(2);
             this.btnD1d4.Name = "btnD1d4";
             this.btnD1d4.Size = new System.Drawing.Size(85, 32);
             this.btnD1d4.TabIndex = 151;
@@ -1331,7 +1330,7 @@ namespace Cant_stop
             // btnD2d3
             // 
             this.btnD2d3.Location = new System.Drawing.Point(92, 556);
-            this.btnD2d3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnD2d3.Margin = new System.Windows.Forms.Padding(2);
             this.btnD2d3.Name = "btnD2d3";
             this.btnD2d3.Size = new System.Drawing.Size(85, 32);
             this.btnD2d3.TabIndex = 152;
@@ -1351,38 +1350,16 @@ namespace Cant_stop
             this.lblCor.Text = "Sua cor é: ";
             this.lblCor.Click += new System.EventHandler(this.lblCor_Click);
             // 
-            // picPecaVermelha
+            // picPecaVermelha2
             // 
-            this.picPecaVermelha.BackColor = System.Drawing.Color.Transparent;
-            this.picPecaVermelha.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPecaVermelha.BackgroundImage")));
-            this.picPecaVermelha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPecaVermelha.Location = new System.Drawing.Point(964, 201);
-            this.picPecaVermelha.Name = "picPecaVermelha";
-            this.picPecaVermelha.Size = new System.Drawing.Size(29, 26);
-            this.picPecaVermelha.TabIndex = 155;
-            this.picPecaVermelha.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox19.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox19.BackgroundImage")));
-            this.pictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox19.Location = new System.Drawing.Point(964, 151);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(29, 26);
-            this.pictureBox19.TabIndex = 156;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox85
-            // 
-            this.pictureBox85.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox85.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox85.BackgroundImage")));
-            this.pictureBox85.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox85.Location = new System.Drawing.Point(964, 246);
-            this.pictureBox85.Name = "pictureBox85";
-            this.pictureBox85.Size = new System.Drawing.Size(29, 26);
-            this.pictureBox85.TabIndex = 157;
-            this.pictureBox85.TabStop = false;
+            this.picPecaVermelha2.BackColor = System.Drawing.Color.Transparent;
+            this.picPecaVermelha2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPecaVermelha2.BackgroundImage")));
+            this.picPecaVermelha2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPecaVermelha2.Location = new System.Drawing.Point(964, 201);
+            this.picPecaVermelha2.Name = "picPecaVermelha2";
+            this.picPecaVermelha2.Size = new System.Drawing.Size(29, 26);
+            this.picPecaVermelha2.TabIndex = 155;
+            this.picPecaVermelha2.TabStop = false;
             // 
             // button1
             // 
@@ -1414,6 +1391,28 @@ namespace Cant_stop
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // picPecaVermelha1
+            // 
+            this.picPecaVermelha1.BackColor = System.Drawing.Color.Transparent;
+            this.picPecaVermelha1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPecaVermelha1.BackgroundImage")));
+            this.picPecaVermelha1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPecaVermelha1.Location = new System.Drawing.Point(964, 233);
+            this.picPecaVermelha1.Name = "picPecaVermelha1";
+            this.picPecaVermelha1.Size = new System.Drawing.Size(29, 26);
+            this.picPecaVermelha1.TabIndex = 161;
+            this.picPecaVermelha1.TabStop = false;
+            // 
+            // picPecaVermelha3
+            // 
+            this.picPecaVermelha3.BackColor = System.Drawing.Color.Transparent;
+            this.picPecaVermelha3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPecaVermelha3.BackgroundImage")));
+            this.picPecaVermelha3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPecaVermelha3.Location = new System.Drawing.Point(964, 265);
+            this.picPecaVermelha3.Name = "picPecaVermelha3";
+            this.picPecaVermelha3.Size = new System.Drawing.Size(29, 26);
+            this.picPecaVermelha3.TabIndex = 162;
+            this.picPecaVermelha3.TabStop = false;
+            // 
             // inGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1422,6 +1421,8 @@ namespace Cant_stop
             this.BackgroundImage = global::Cant_stop.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1052, 660);
+            this.Controls.Add(this.picPecaVermelha3);
+            this.Controls.Add(this.picPecaVermelha1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
@@ -1441,11 +1442,9 @@ namespace Cant_stop
             this.Controls.Add(this.btnVerificar);
             this.Controls.Add(this.picDado2);
             this.Controls.Add(this.picDado4);
-            this.Controls.Add(this.pictureBox19);
-            this.Controls.Add(this.picPecaVermelha);
-            this.Controls.Add(this.pictureBox85);
+            this.Controls.Add(this.picPecaVermelha2);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1068, 699);
             this.MinimumSize = new System.Drawing.Size(1068, 699);
             this.Name = "inGame";
@@ -1453,7 +1452,6 @@ namespace Cant_stop
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
@@ -1535,13 +1533,14 @@ namespace Cant_stop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox82)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox83)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox85)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1648,11 +1647,11 @@ namespace Cant_stop
         private System.Windows.Forms.Button btnD1d4;
         private System.Windows.Forms.Button btnD2d3;
         private System.Windows.Forms.Label lblCor;
-        private System.Windows.Forms.PictureBox picPecaVermelha;
-        private System.Windows.Forms.PictureBox pictureBox19;
-        private System.Windows.Forms.PictureBox pictureBox85;
+        private System.Windows.Forms.PictureBox picPecaVermelha2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox picPecaVermelha1;
+        private System.Windows.Forms.PictureBox picPecaVermelha3;
     }
 }

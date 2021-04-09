@@ -23,8 +23,6 @@ namespace Cant_stop
         {
             InitializeComponent();
             lblCor.Text = "Sua cor é: " + Lobby.cor;
-            
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -75,6 +73,17 @@ namespace Cant_stop
                 }
             }
             btnD1d2.Text = (dado1 + dado2).ToString() + " " + (dado3 + dado4).ToString();
+            btnD1d3.Text = (dado1 + dado3).ToString() + " " + (dado2 + dado4).ToString();
+            btnD1d4.Text = (dado1 + dado4).ToString() + " " + (dado3 + dado2).ToString();
+
+            btnD3d4.Text = (dado1 + dado2).ToString();
+            btnD2d4.Text = (dado1 + dado3).ToString();
+            btnD2d3.Text = (dado1 + dado4).ToString();
+
+            button1.Text = (dado3 + dado4).ToString();
+            button2.Text = (dado2 + dado4).ToString();
+            button3.Text = (dado3 + dado2).ToString();
+
         }
 
         private void btnVerificar_Click(object sender, EventArgs e)
@@ -157,38 +166,106 @@ namespace Cant_stop
 
             string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (somad1d2+somad3d4));
             
-            if(mover == "")
+            if (mover == "")
             {
-
+                if (somad1d2 == "2" || somad3d4 == "2")
+                {
+                    if(pri && seg)
+                    {
+                        tableLayoutPanel1.Controls.Add(picPecaVermelha2, 0, 7);
+                        pictureBox17.Visible = false;
+                    }
+                    else if (pri)
+                    {
+                        tableLayoutPanel1.Controls.Add(picPecaVermelha1, 0, 7);
+                        pictureBox17.Visible = false;
+                    }
+                    else if (seg)
+                    {
+                        tableLayoutPanel1.Controls.Add(picPecaVermelha3, 0, 7);
+                        pictureBox17.Visible = false;
+                    }
+                }
+                if (somad1d2 == "3" || somad3d4 == "3")
+                {
+                    if (pri && seg)
+                    {
+                        tableLayoutPanel1.Controls.Add(picPecaVermelha2, 1, 8);
+                        pictureBox2.Visible = false;
+                    }
+                    else if (pri)
+                    {
+                        tableLayoutPanel1.Controls.Add(picPecaVermelha2, 1, 8);
+                        pictureBox2.Visible = false;
+                    }
+                    else if (seg)
+                    {
+                        tableLayoutPanel1.Controls.Add(picPecaVermelha2, 1, 8);
+                        pictureBox2.Visible = false;
+                    }
+                }
+                if (somad1d2 == "4" || somad3d4 == "4")
+                {
+                    if (pri && seg)
+                    {
+                        tableLayoutPanel1.Controls.Add(picPecaVermelha2, 2, 9);
+                        pictureBox3.Visible = false;
+                    }
+                    else if (pri)
+                    {
+                        tableLayoutPanel1.Controls.Add(picPecaVermelha2, 2, 9);
+                        pictureBox3.Visible = false;
+                    }
+                    else if (seg)
+                    {
+                        tableLayoutPanel1.Controls.Add(picPecaVermelha2, 2, 9);
+                        pictureBox3.Visible = false;
+                    }
+                }
+                if (somad1d2 == "5" || somad3d4 == "5")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 3, 10);
+                    pictureBox1.Visible = false;
+                }
+                if (somad1d2 == "6" || somad3d4 == "6")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 4, 11);
+                    pictureBox6.Visible = false;
+                }
+                if (somad1d2 == "7" || somad3d4 == "7")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 5, 12);
+                    pictureBox10.Visible = false;
+                }
+                if (somad1d2 == "8" || somad3d4 == "8")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 6, 11);
+                    pictureBox18.Visible = false;
+                }
+                if (somad1d2 == "9" || somad3d4 == "9")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 7, 10);
+                    pictureBox5.Visible = false;
+                }
+                if (somad1d2 == "10" || somad3d4 == "10")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 8, 9);
+                    pictureBox7.Visible = false;
+                }
+                if (somad1d2 == "11" || somad3d4 == "11")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 9, 8);
+                    pictureBox4.Visible = false;
+                }
+                if (somad1d2 == "12" || somad3d4 == "12")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 10, 7);
+                    pictureBox8.Visible = false;
+                }
             }
             else {  
-            MessageBox.Show(mover,"",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mover,"", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            if(somad1d2 == "7" || somad3d4 == "7")
-            {
-                tableLayoutPanel1.Controls.Add(picPecaVermelha, 5, 7);
-
-                
-            }
-            if (somad1d2 == "6" || somad3d4 == "6")
-            {
-                picPecaVermelha.Location = new Point(399, 711);
-                
-            }
-            if (somad1d2 == "5" || somad3d4 == "5")
-            {
-                picPecaVermelha.Location = new Point(399, 711);
-            }
-            if (somad1d2 == "9" || somad3d4 == "9")
-            {
-                picPecaVermelha.Location = new Point(399, 711);
-
-            }
-
-           
-
         }
 
         private void pictureBox44_Click(object sender, EventArgs e)
@@ -260,16 +337,69 @@ namespace Cant_stop
                 somad3d4 = "C";
             }
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (somad1d2 + somad3d4));
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", (somad1d2 + somad3d4));
 
             if (mover == "")
             {
-
+                if (somad1d2 == "2" || somad3d4 == "2")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 0, 7);
+                    pictureBox17.Visible = false;
+                }
+                if (somad1d2 == "3" || somad3d4 == "3")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 1, 8);
+                    pictureBox2.Visible = false;
+                }
+                if (somad1d2 == "4" || somad3d4 == "4")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 2, 9);
+                    pictureBox3.Visible = false;
+                }
+                if (somad1d2 == "5" || somad3d4 == "5")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 3, 10);
+                    pictureBox1.Visible = false;
+                }
+                if (somad1d2 == "6" || somad3d4 == "6")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 4, 11);
+                    pictureBox6.Visible = false;
+                }
+                if (somad1d2 == "7" || somad3d4 == "7")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 5, 12);
+                    pictureBox10.Visible = false;
+                }
+                if (somad1d2 == "8" || somad3d4 == "8")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 6, 11);
+                    pictureBox18.Visible = false;
+                }
+                if (somad1d2 == "9" || somad3d4 == "9")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 7, 10);
+                    pictureBox5.Visible = false;
+                }
+                if (somad1d2 == "10" || somad3d4 == "10")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 8, 9);
+                    pictureBox7.Visible = false;
+                }
+                if (somad1d2 == "11" || somad3d4 == "11")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 9, 8);
+                    pictureBox4.Visible = false;
+                }
+                if (somad1d2 == "12" || somad3d4 == "12")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 10, 7);
+                    pictureBox8.Visible = false;
+                }
             }
             else
             {
-                MessageBox.Show(mover, "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -302,16 +432,69 @@ namespace Cant_stop
                 somad3d4 = "C";
             }
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (somad1d2 + somad3d4));
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", (somad1d2 + somad3d4));
 
             if (mover == "")
             {
-
+                if (somad1d2 == "2" || somad3d4 == "2")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 0, 7);
+                    pictureBox17.Visible = false;
+                }
+                if (somad1d2 == "3" || somad3d4 == "3")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 1, 8);
+                    pictureBox2.Visible = false;
+                }
+                if (somad1d2 == "4" || somad3d4 == "4")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 2, 9);
+                    pictureBox3.Visible = false;
+                }
+                if (somad1d2 == "5" || somad3d4 == "5")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 3, 10);
+                    pictureBox1.Visible = false;
+                }
+                if (somad1d2 == "6" || somad3d4 == "6")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 4, 11);
+                    pictureBox6.Visible = false;
+                }
+                if (somad1d2 == "7" || somad3d4 == "7")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 5, 12);
+                    pictureBox10.Visible = false;
+                }
+                if (somad1d2 == "8" || somad3d4 == "8")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 6, 11);
+                    pictureBox18.Visible = false;
+                }
+                if (somad1d2 == "9" || somad3d4 == "9")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 7, 10);
+                    pictureBox5.Visible = false;
+                }
+                if (somad1d2 == "10" || somad3d4 == "10")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 8, 9);
+                    pictureBox7.Visible = false;
+                }
+                if (somad1d2 == "11" || somad3d4 == "11")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 9, 8);
+                    pictureBox4.Visible = false;
+                }
+                if (somad1d2 == "12" || somad3d4 == "12")
+                {
+                    tableLayoutPanel1.Controls.Add(picPecaVermelha2, 10, 7);
+                    pictureBox8.Visible = false;
+                }
             }
             else
             {
-                MessageBox.Show(mover, "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -333,16 +516,15 @@ namespace Cant_stop
             }
             
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", somad1d2);
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (somad1d2+"0"));
 
             if (mover == "")
             {
-
+                
             }
             else
             {
-                MessageBox.Show(mover, "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -364,16 +546,14 @@ namespace Cant_stop
             }
 
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", somad1d2);
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "130", somad1d2);
 
             if (mover == "")
             {
-
             }
             else
             {
-                MessageBox.Show(mover, "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -395,7 +575,7 @@ namespace Cant_stop
             }
 
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", somad1d2);
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1400", somad1d2);
 
             if (mover == "")
             {
@@ -403,8 +583,7 @@ namespace Cant_stop
             }
             else
             {
-                MessageBox.Show(mover, "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -426,7 +605,7 @@ namespace Cant_stop
             }
 
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", somad1d2);
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "3400", somad1d2);
 
             if (mover == "")
             {
@@ -434,8 +613,7 @@ namespace Cant_stop
             }
             else
             {
-                MessageBox.Show(mover, "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -457,7 +635,7 @@ namespace Cant_stop
             }
 
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", somad1d2);
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2400", somad1d2);
 
             if (mover == "")
             {
@@ -465,8 +643,7 @@ namespace Cant_stop
             }
             else
             {
-                MessageBox.Show(mover, "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -488,7 +665,7 @@ namespace Cant_stop
             }
 
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", somad1d2);
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2300    ", somad1d2);
 
             if (mover == "")
             {
@@ -496,8 +673,7 @@ namespace Cant_stop
             }
             else
             {
-                MessageBox.Show(mover, "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
