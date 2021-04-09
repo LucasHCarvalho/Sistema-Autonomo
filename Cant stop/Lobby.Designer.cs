@@ -52,9 +52,10 @@ namespace Cant_stop
             // btnMostraLista
             // 
             this.btnMostraLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostraLista.Location = new System.Drawing.Point(2, 281);
+            this.btnMostraLista.Location = new System.Drawing.Point(3, 346);
+            this.btnMostraLista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMostraLista.Name = "btnMostraLista";
-            this.btnMostraLista.Size = new System.Drawing.Size(128, 51);
+            this.btnMostraLista.Size = new System.Drawing.Size(171, 63);
             this.btnMostraLista.TabIndex = 0;
             this.btnMostraLista.Text = "Mostra Lista";
             this.btnMostraLista.UseVisualStyleBackColor = true;
@@ -64,20 +65,21 @@ namespace Cant_stop
             // 
             this.lstListarPartidas.BackColor = System.Drawing.SystemColors.Menu;
             this.lstListarPartidas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstListarPartidas.ItemHeight = 17;
-            this.lstListarPartidas.Location = new System.Drawing.Point(2, 6);
+            this.lstListarPartidas.ItemHeight = 22;
+            this.lstListarPartidas.Location = new System.Drawing.Point(3, 7);
+            this.lstListarPartidas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstListarPartidas.Name = "lstListarPartidas";
-            this.lstListarPartidas.Size = new System.Drawing.Size(278, 259);
+            this.lstListarPartidas.Size = new System.Drawing.Size(369, 312);
             this.lstListarPartidas.TabIndex = 1;
             this.lstListarPartidas.SelectedIndexChanged += new System.EventHandler(this.lstListarPartidas_SelectedIndexChanged);
             // 
             // btnEntrar
             // 
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEntrar.Location = new System.Drawing.Point(543, 234);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEntrar.Location = new System.Drawing.Point(724, 288);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(85, 46);
+            this.btnEntrar.Size = new System.Drawing.Size(113, 57);
             this.btnEntrar.TabIndex = 3;
             this.btnEntrar.Text = "Entrar na Partida";
             this.btnEntrar.UseVisualStyleBackColor = true;
@@ -86,10 +88,10 @@ namespace Cant_stop
             // btnCriar
             // 
             this.btnCriar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCriar.Location = new System.Drawing.Point(347, 231);
-            this.btnCriar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCriar.Location = new System.Drawing.Point(463, 284);
+            this.btnCriar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(86, 49);
+            this.btnCriar.Size = new System.Drawing.Size(115, 60);
             this.btnCriar.TabIndex = 4;
             this.btnCriar.Text = "Criar Partida";
             this.btnCriar.UseVisualStyleBackColor = true;
@@ -98,10 +100,10 @@ namespace Cant_stop
             // btnListaJogadores
             // 
             this.btnListaJogadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListaJogadores.Location = new System.Drawing.Point(692, 6);
-            this.btnListaJogadores.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListaJogadores.Location = new System.Drawing.Point(923, 7);
+            this.btnListaJogadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnListaJogadores.Name = "btnListaJogadores";
-            this.btnListaJogadores.Size = new System.Drawing.Size(83, 49);
+            this.btnListaJogadores.Size = new System.Drawing.Size(111, 60);
             this.btnListaJogadores.TabIndex = 5;
             this.btnListaJogadores.Text = "Listar Jogadores";
             this.btnListaJogadores.UseVisualStyleBackColor = true;
@@ -109,10 +111,10 @@ namespace Cant_stop
             // 
             // txtCriarPartida
             // 
-            this.txtCriarPartida.Location = new System.Drawing.Point(306, 143);
-            this.txtCriarPartida.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCriarPartida.Location = new System.Drawing.Point(408, 176);
+            this.txtCriarPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCriarPartida.Name = "txtCriarPartida";
-            this.txtCriarPartida.Size = new System.Drawing.Size(179, 20);
+            this.txtCriarPartida.Size = new System.Drawing.Size(237, 22);
             this.txtCriarPartida.TabIndex = 6;
             this.txtCriarPartida.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -120,10 +122,9 @@ namespace Cant_stop
             // 
             this.lblCriarPartida.AutoSize = true;
             this.lblCriarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCriarPartida.Location = new System.Drawing.Point(305, 121);
-            this.lblCriarPartida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCriarPartida.Location = new System.Drawing.Point(407, 149);
             this.lblCriarPartida.Name = "lblCriarPartida";
-            this.lblCriarPartida.Size = new System.Drawing.Size(192, 18);
+            this.lblCriarPartida.Size = new System.Drawing.Size(238, 24);
             this.lblCriarPartida.TabIndex = 7;
             this.lblCriarPartida.Text = "Digite o nome da partida";
             // 
@@ -132,19 +133,18 @@ namespace Cant_stop
             this.lblSenhaPartida.AutoSize = true;
             this.lblSenhaPartida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSenhaPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSenhaPartida.Location = new System.Drawing.Point(303, 182);
-            this.lblSenhaPartida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSenhaPartida.Location = new System.Drawing.Point(404, 224);
             this.lblSenhaPartida.Name = "lblSenhaPartida";
-            this.lblSenhaPartida.Size = new System.Drawing.Size(194, 18);
+            this.lblSenhaPartida.Size = new System.Drawing.Size(241, 24);
             this.lblSenhaPartida.TabIndex = 8;
             this.lblSenhaPartida.Text = "Digite a senha da partida";
             // 
             // txtSenhaPartida
             // 
-            this.txtSenhaPartida.Location = new System.Drawing.Point(306, 208);
-            this.txtSenhaPartida.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSenhaPartida.Location = new System.Drawing.Point(408, 256);
+            this.txtSenhaPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSenhaPartida.Name = "txtSenhaPartida";
-            this.txtSenhaPartida.Size = new System.Drawing.Size(175, 20);
+            this.txtSenhaPartida.Size = new System.Drawing.Size(232, 22);
             this.txtSenhaPartida.TabIndex = 9;
             this.txtSenhaPartida.TextChanged += new System.EventHandler(this.txtSenhaPartida_TextChanged);
             // 
@@ -152,49 +152,47 @@ namespace Cant_stop
             // 
             this.lblNomeJogador.AutoSize = true;
             this.lblNomeJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeJogador.Location = new System.Drawing.Point(577, 121);
-            this.lblNomeJogador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNomeJogador.Location = new System.Drawing.Point(769, 149);
             this.lblNomeJogador.Name = "lblNomeJogador";
-            this.lblNomeJogador.Size = new System.Drawing.Size(130, 18);
+            this.lblNomeJogador.Size = new System.Drawing.Size(162, 24);
             this.lblNomeJogador.TabIndex = 10;
             this.lblNomeJogador.Text = "Digite seu nome";
             // 
             // txtNomeJogador
             // 
-            this.txtNomeJogador.Location = new System.Drawing.Point(550, 143);
-            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomeJogador.Location = new System.Drawing.Point(733, 176);
+            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomeJogador.Name = "txtNomeJogador";
-            this.txtNomeJogador.Size = new System.Drawing.Size(176, 20);
+            this.txtNomeJogador.Size = new System.Drawing.Size(233, 22);
             this.txtNomeJogador.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(557, 182);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(743, 224);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 18);
+            this.label1.Size = new System.Drawing.Size(241, 24);
             this.label1.TabIndex = 12;
             this.label1.Text = "Digite a senha da partida";
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(550, 208);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSenha.Location = new System.Drawing.Point(733, 256);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(176, 20);
+            this.txtSenha.Size = new System.Drawing.Size(233, 22);
             this.txtSenha.TabIndex = 13;
             // 
             // lstListaJogadores
             // 
             this.lstListaJogadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstListaJogadores.FormattingEnabled = true;
-            this.lstListaJogadores.ItemHeight = 17;
-            this.lstListaJogadores.Location = new System.Drawing.Point(779, 6);
-            this.lstListaJogadores.Margin = new System.Windows.Forms.Padding(2);
+            this.lstListaJogadores.ItemHeight = 22;
+            this.lstListaJogadores.Location = new System.Drawing.Point(1039, 7);
+            this.lstListaJogadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstListaJogadores.Name = "lstListaJogadores";
-            this.lstListaJogadores.Size = new System.Drawing.Size(170, 72);
+            this.lstListaJogadores.Size = new System.Drawing.Size(225, 70);
             this.lstListaJogadores.TabIndex = 14;
             this.lstListaJogadores.SelectedIndexChanged += new System.EventHandler(this.lstListaJogadores_SelectedIndexChanged);
             // 
@@ -203,10 +201,9 @@ namespace Cant_stop
             this.lblVersao.AutoSize = true;
             this.lblVersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblVersao.Location = new System.Drawing.Point(-2, 390);
-            this.lblVersao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVersao.Location = new System.Drawing.Point(-3, 480);
             this.lblVersao.Name = "lblVersao";
-            this.lblVersao.Size = new System.Drawing.Size(59, 17);
+            this.lblVersao.Size = new System.Drawing.Size(68, 20);
             this.lblVersao.TabIndex = 15;
             this.lblVersao.Text = "Versão\r\n";
             this.lblVersao.Click += new System.EventHandler(this.lblversao_Click);
@@ -214,10 +211,10 @@ namespace Cant_stop
             // btnIniciarPartida
             // 
             this.btnIniciarPartida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarPartida.Location = new System.Drawing.Point(640, 234);
-            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIniciarPartida.Location = new System.Drawing.Point(853, 288);
+            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIniciarPartida.Name = "btnIniciarPartida";
-            this.btnIniciarPartida.Size = new System.Drawing.Size(86, 46);
+            this.btnIniciarPartida.Size = new System.Drawing.Size(115, 57);
             this.btnIniciarPartida.TabIndex = 17;
             this.btnIniciarPartida.Text = "Iniciar Partida";
             this.btnIniciarPartida.UseVisualStyleBackColor = true;
@@ -228,10 +225,9 @@ namespace Cant_stop
             this.lblTratativaErro.AutoSize = true;
             this.lblTratativaErro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lblTratativaErro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTratativaErro.Location = new System.Drawing.Point(540, 340);
-            this.lblTratativaErro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTratativaErro.Location = new System.Drawing.Point(720, 418);
             this.lblTratativaErro.Name = "lblTratativaErro";
-            this.lblTratativaErro.Size = new System.Drawing.Size(0, 18);
+            this.lblTratativaErro.Size = new System.Drawing.Size(0, 24);
             this.lblTratativaErro.TabIndex = 18;
             this.lblTratativaErro.Click += new System.EventHandler(this.lblTratativaErro_Click);
             // 
@@ -239,18 +235,17 @@ namespace Cant_stop
             // 
             this.lblCriarErro.AutoSize = true;
             this.lblCriarErro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCriarErro.Location = new System.Drawing.Point(371, 344);
-            this.lblCriarErro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCriarErro.Location = new System.Drawing.Point(495, 423);
             this.lblCriarErro.Name = "lblCriarErro";
-            this.lblCriarErro.Size = new System.Drawing.Size(0, 17);
+            this.lblCriarErro.Size = new System.Drawing.Size(0, 20);
             this.lblCriarErro.TabIndex = 19;
             // 
             // Lobby
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(957, 405);
+            this.ClientSize = new System.Drawing.Size(1276, 498);
             this.Controls.Add(this.lblCriarErro);
             this.Controls.Add(this.lblTratativaErro);
             this.Controls.Add(this.btnIniciarPartida);
@@ -270,6 +265,7 @@ namespace Cant_stop
             this.Controls.Add(this.lstListarPartidas);
             this.Controls.Add(this.btnMostraLista);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Lobby";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Lobby_Load);

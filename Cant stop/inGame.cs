@@ -18,11 +18,10 @@ namespace Cant_stop
         public static int dado2;
         public static int dado3;
         public static int dado4;
-
         public inGame()
         {
             InitializeComponent();
-            
+            lblCor.Text = "Sua cor é: " + Lobby.cor;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -72,13 +71,13 @@ namespace Cant_stop
                     picDado4.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
+            btnD1d2.Text = (dado1 + dado2).ToString() + " " + (dado3 + dado4).ToString();
         }
 
         private void btnVerificar_Click(object sender, EventArgs e)
         {
             string verificaVez = Jogo.VerificarVez(Lobby.IdPartida);
             MessageBox.Show(verificaVez);
-            Console.WriteLine(verificaVez);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -97,6 +96,103 @@ namespace Cant_stop
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            string paraTabuleiro = Jogo.Parar(Lobby.IdJogador, Lobby.senhaJogador);
+        }
+
+        private void btnTabuleiro_Click(object sender, EventArgs e)
+        {
+            string verificaTabuleiro = Jogo.ExibirTabuleiro(Lobby.IdPartida);
+            if(verificaTabuleiro == "") {
+                MessageBox.Show("Nenhuma jogada foi executada");
+            } else { 
+                verificaTabuleiro = verificaTabuleiro.Replace("\r", "");
+                string[] linha = verificaTabuleiro.Split('\n');
+                MessageBox.Show(verificaTabuleiro);
+                int i = 72;
+               
+            }
+        }
+
+        private void btnDado1_Click(object sender, EventArgs e)
+        {
+            string somad1d2 = (dado1 + dado2).ToString();
+            string somad3d4 = (dado3 + dado4).ToString();
+            if (somad1d2 == "10") {
+                somad1d2 = "A";
+            }
+            else if (somad1d2 == "11") { 
+                somad1d2 = "B";
+            }
+            else if (somad1d2 == "12"){
+                somad1d2 = "C";
+            }
+            if (somad3d4 == "10")
+            {
+                somad3d4 = "A";
+            }
+            else if (somad3d4 == "11")
+            {
+                somad3d4 = "B";
+            }
+            else if (somad3d4 == "12")
+            {
+                somad3d4 = "C";
+            }
+
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (somad1d2+somad3d4));
+            if(mover == "")
+            {
+
+
+            }
+            else {  
+            MessageBox.Show(mover,"",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox44_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlCor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picDado1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox37_Click(object sender, EventArgs e)
         {
 
         }

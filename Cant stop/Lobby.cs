@@ -16,6 +16,7 @@ namespace Cant_stop
         public static int IdPartida{ get; set; }
         public static int IdJogador { get; set; }
         public static string senhaJogador { get; set; }
+        public static string cor { get; set; }
         public Lobby()
         {
             InitializeComponent();
@@ -109,6 +110,7 @@ namespace Cant_stop
             } else { 
             IdJogador = Convert.ToInt32(itens[0]);
             senhaJogador = itens[1];
+            cor = itens[2];
             MessageBox.Show(senhaJogador);
             string partida = Jogo.IniciarPartida(IdJogador, senhaJogador);
             inGame ingame = new inGame();
