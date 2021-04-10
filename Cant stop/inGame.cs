@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CantStopServer;
+using System;
 using System.Windows.Forms;
-using CantStopServer;
 
 namespace Cant_stop
 {
     public partial class inGame : Form
     {
         public string dadosGlobal;
-        public static int dado1;
-        public static int dado2;
-        public static int dado3;
-        public static int dado4;
-        
+        public static int dado1, dado2, dado3, dado4;
+
         public inGame()
         {
             InitializeComponent();
@@ -46,9 +36,7 @@ namespace Cant_stop
             Console.WriteLine(dadosGlobal);
             string verificaDado = dadosGlobal.Substring(0, 1);
             if (verificaDado == "E")
-            {
                 MessageBox.Show(dadosGlobal, "Ação Incompleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             else
             {
                 dado1 = Convert.ToInt32(dadosGlobal.Substring(1, 1));
@@ -58,10 +46,11 @@ namespace Cant_stop
                 Console.WriteLine("{0}-{1}-{2}-{3}", dado1, dado2, dado3, dado4);
             }
 
-            for (int i = 1; i <= 6; i++) {
+            for (int i = 1; i <= 6; i++)
+            {
                 if (dado1 == i)
                 {
-                    picDado1.ImageLocation = @"..\..\Imagens\dado1.png"; 
+                    picDado1.ImageLocation = @"..\..\Imagens\dado1.png";
                     picDado1.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 if (dado2 == i)
@@ -91,7 +80,6 @@ namespace Cant_stop
             button1.Text = (dado3 + dado4).ToString();
             button2.Text = (dado2 + dado4).ToString();
             button3.Text = (dado3 + dado2).ToString();
-
         }
 
         private void btnVerificar_Click(object sender, EventArgs e)
@@ -103,26 +91,39 @@ namespace Cant_stop
         private void btnStop_Click(object sender, EventArgs e)
         {
             string paraTabuleiro = Jogo.Parar(Lobby.IdJogador, Lobby.senhaJogador);
+            if (paraTabuleiro != "")
+                MessageBox.Show(paraTabuleiro, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnTabuleiro_Click(object sender, EventArgs e)
         {
             string verificaTabuleiro = Jogo.ExibirTabuleiro(Lobby.IdPartida);
-            if(verificaTabuleiro == "")
+            if (verificaTabuleiro == "")
                 MessageBox.Show("Nenhuma jogada foi executada");
             else
-            { 
+            {
                 verificaTabuleiro = verificaTabuleiro.Replace("\r", "");
-                string[] linha = verificaTabuleiro.Split('\n');
+                string[] linhas = verificaTabuleiro.Split('\n');
                 MessageBox.Show(verificaTabuleiro);
-                /*for(int i = 0; i <= linha.Length; i++)
+                
+                for (int i = 0; i < linhas.Length; i++)
                 {
-                    string[] vetor = linha[i].Split(',');
-                    int coluna = Convert.ToInt32(vetor[0]);
-                    int linhas = Convert.ToInt32(vetor[1]);
+                    string[] posicoes = linhas[i].Split(',');
+                    if(linhas[i] != "")
+                    {
+                        string coluna = posicoes[0];
+                        MessageBox.Show(coluna);
 
-                    tableLayoutPanel1.Controls.Add(picPecaVermelha, coluna, linhas);
-                }*/
+                        string linha = posicoes[1];
+                        MessageBox.Show(linha);
+
+                        int column = Convert.ToInt32(coluna) - 2;
+                        int row = 13 - Convert.ToInt32(coluna);
+
+                        //pega o controle que esta na posicção da peça;
+                        Control posicao = tableLayoutPanel1.GetControlFromPosition(column, row);
+                    }                                      
+                }
             }
         }
 
@@ -131,8 +132,8 @@ namespace Cant_stop
             string soma1 = somaDados(dado1, dado2);
             string soma2 = somaDados(dado3, dado4);
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (soma1+soma2));
-            
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (soma1 + soma2));
+
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -163,7 +164,7 @@ namespace Cant_stop
         {
             string soma1 = somaDados(dado1, dado2);
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (soma1 + "00"));
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (soma1 + "0"));
 
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -173,7 +174,7 @@ namespace Cant_stop
         {
             string soma1 = somaDados(dado1, dado3);
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", (soma1 + "00"));
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", (soma1 + "0"));
 
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -183,7 +184,7 @@ namespace Cant_stop
         {
             string soma1 = somaDados(dado1, dado4);
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", (soma1 + "00"));
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", (soma1 + "0"));
 
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -193,7 +194,7 @@ namespace Cant_stop
         {
             string soma1 = somaDados(dado3, dado4);
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "3412", (soma1 + "00"));
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "3412", (soma1 + "0"));
 
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -203,7 +204,7 @@ namespace Cant_stop
         {
             string soma1 = somaDados(dado2, dado4);
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2413", (soma1 + "00"));
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2413", (soma1 + "0"));
 
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -213,7 +214,7 @@ namespace Cant_stop
         {
             string soma1 = somaDados(dado2, dado3);
 
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2314", (soma1 + "00"));
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2314", (soma1+"0"));
 
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);

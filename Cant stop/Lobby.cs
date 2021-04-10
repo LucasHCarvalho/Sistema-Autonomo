@@ -58,7 +58,6 @@ namespace Cant_stop
             IdPartida = Convert.ToInt32(itens[0]);
             
             string listajogadores = Jogo.ListarJogadores(IdPartida);
-            /*listajogadores = listajogadores.Replace("\r", "");*/
             string[] espaco = listajogadores.Split('\n');
             lstListaJogadores.Items.Clear();
             for (int i = 0; i < espaco.Length; i++)
@@ -66,36 +65,6 @@ namespace Cant_stop
                 lstListaJogadores.Items.Add(espaco[i]);
             }
             
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSenhaPartida_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstListarPartidas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstListaJogadores_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblversao_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Lobby_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -116,11 +85,6 @@ namespace Cant_stop
             inGame ingame = new inGame();
             ingame.ShowDialog();
             }
-        }
-
-        private void lblTratativaErro_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
