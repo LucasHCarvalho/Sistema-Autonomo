@@ -1,6 +1,7 @@
 ﻿using CantStopServer;
 using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Cant_stop
 {
@@ -118,11 +119,14 @@ namespace Cant_stop
                         MessageBox.Show(linha);
 
                         int column = Convert.ToInt32(coluna) - 2;
-                        int row = 13 - Convert.ToInt32(coluna);
+                        int row = 13 - Convert.ToInt32(linha);
 
                         //pega o controle que esta na posicção da peça;
                         Control posicao = tableLayoutPanel1.GetControlFromPosition(column, row);
-                    }                                      
+                        Image myimage = new Bitmap(@"..\..\Imagens\dado1.jpg");
+                        posicao.BackgroundImage = myimage;
+                        posicao.BackgroundImageLayout = ImageLayout.Stretch;
+                    }                    
                 }
             }
         }
