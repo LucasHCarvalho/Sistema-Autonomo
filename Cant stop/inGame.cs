@@ -13,7 +13,6 @@ namespace Cant_stop
         public inGame()
         {
             InitializeComponent();
-            lblCor.Text = "Sua cor é: " + Lobby.cor;
         }
 
         public string somaDados(int dado1, int dado2)
