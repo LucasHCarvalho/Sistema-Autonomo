@@ -212,13 +212,13 @@ namespace Cant_stop
             // 
             // btnMostraLista
             // 
-            this.btnMostraLista.BackColor = System.Drawing.Color.LightGray;
+            this.btnMostraLista.BackColor = System.Drawing.Color.Transparent;
             this.btnMostraLista.BackgroundImage = global::Cant_stop.Properties.Resources.refresh;
             this.btnMostraLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMostraLista.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMostraLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostraLista.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnMostraLista.Location = new System.Drawing.Point(271, 51);
+            this.btnMostraLista.Location = new System.Drawing.Point(271, 59);
             this.btnMostraLista.Margin = new System.Windows.Forms.Padding(4);
             this.btnMostraLista.Name = "btnMostraLista";
             this.btnMostraLista.Size = new System.Drawing.Size(45, 39);
