@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CantStopServer;
-
+using System.Media;
 namespace Cant_stop
 {
     public partial class Lobby : Form
@@ -25,7 +25,6 @@ namespace Cant_stop
         public static string nomeJAzul { get; set; }
         public static string nomeJVerde { get; set; }
         public static string nomeJAmarelo { get; set; }
-
         public Lobby()
         {
             InitializeComponent();
@@ -33,6 +32,11 @@ namespace Cant_stop
             mostrarLista();
         }
 
+        /*public void tocamusica()
+        {
+            SoundPlayer splayer = new SoundPlayer(@"..\..\Imagens\lobbymusic.wav");
+            splayer.Play();
+        }*/
         public void mostrarLista()
         {
             string retorno = Jogo.ListarPartidas("T");
@@ -55,7 +59,7 @@ namespace Cant_stop
             {
                 lstListaJogadores.Items.Add(espaco[i]);
             }
-            
+
         }
         public void playerCor()
         {
@@ -108,10 +112,7 @@ namespace Cant_stop
             string res = lblTratativaErro.Text.ToString().Substring(0, 1);
             if (res != "E")
             {
-                //numJogadores += 1;
-                //playerCor(numJogadores);
-            
-            mostrarJogadores(IdPartida);
+                mostrarJogadores(IdPartida);
             }
         }
 
@@ -123,18 +124,9 @@ namespace Cant_stop
             if (res != "E")
             {
                 IdPartida = Convert.ToInt32(criarPartida);
-                if (txtNomeJogador.Text != "")
-                {
-                    string entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenhaPartida.Text);
-                    lblTratativaErro.Text = entrar;
-                    mostrarJogadores(IdPartida);
-                }
-                else
-                {
-                    criarPartida = Jogo.CriarPartida(txtCriarPartida.Text, txtSenhaPartida.Text);
-                    mostrarJogadores(IdPartida);
-                }
-
+                string entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenhaPartida.Text);
+                lblTratativaErro.Text = entrar;
+                mostrarJogadores(IdPartida);
             }
             else
             {
@@ -157,7 +149,6 @@ namespace Cant_stop
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
             string lista = lblTratativaErro.Text.ToString();
             string[] itens = lista.Split(',');
             string res = lblTratativaErro.Text.ToString().Substring(0, 1);
@@ -234,11 +225,6 @@ namespace Cant_stop
 
         private void lstListarPartidas_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void lstListarPartidas_Click(object sender, EventArgs e)
-        {
             string linha = lstListarPartidas.SelectedItem.ToString();
             string[] itens = linha.Split(',');
             IdPartida = Convert.ToInt32(itens[0]);
@@ -251,5 +237,34 @@ namespace Cant_stop
                 lstListaJogadores.Items.Add(espaco[i]);
             }
         }
+
+        private void lblCriarPartida_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNomeJogador_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void lstListarPartidas_SelectedIndexChanged_2(object sender, EventArgs e)
+        {
+            {
+                string linha = lstListarPartidas.SelectedItem.ToString();
+                string[] itens = linha.Split(',');
+                IdPartida = Convert.ToInt32(itens[0]);
+
+                string listajogadores = Jogo.ListarJogadores(IdPartida);
+                string[] espaco = listajogadores.Split('\n');
+                lstListaJogadores.Items.Clear();
+                for (int i = 0; i < espaco.Length; i++)
+                {
+                    lstListaJogadores.Items.Add(espaco[i]);
+                }
+            }
+        
+        }
     }
+
 }
