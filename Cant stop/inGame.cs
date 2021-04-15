@@ -9,6 +9,7 @@ namespace Cant_stop
     {
         public string dadosGlobal;
         public static int dado1, dado2, dado3, dado4;
+        public string cor;
 
         public inGame()
         {
@@ -50,7 +51,7 @@ namespace Cant_stop
             {
                 if (dado1 == i)
                 {
-                    picDado1.ImageLocation = @"..\..\Imagens\dado1.png";
+                    picDado1.ImageLocation = @"..\..\Imagens\dado" + i + ".jpg";
                     picDado1.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 if (dado2 == i)
@@ -85,7 +86,24 @@ namespace Cant_stop
         private void btnVerificar_Click(object sender, EventArgs e)
         {
             string verificaVez = Jogo.VerificarVez(Lobby.IdPartida);
-            MessageBox.Show(verificaVez);
+            string lista = verificaVez.ToString();
+            string[] itens = lista.Split(',');
+            if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorVermelho))
+            {
+                MessageBox.Show("É a vez do " + Lobby.nomeJVermelho + " de cor vermelha");
+            }
+            else if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorAzul))
+            {
+                MessageBox.Show("É a vez do " + Lobby.nomeJAzul + " de cor azul");
+            }
+            else if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorVerde))
+            {
+                MessageBox.Show("É a vez do " + Lobby.nomeJVerde + " de cor verde");
+            }
+            else
+            {
+                MessageBox.Show("É a vez do " + Lobby.nomeJAmarelo + " de cor amarela");
+            }
         }
 
         private void btnStop_Click(object sender, EventArgs e)
@@ -97,6 +115,8 @@ namespace Cant_stop
 
         private void btnTabuleiro_Click(object sender, EventArgs e)
         {
+            limpaTela();
+
             string verificaTabuleiro = Jogo.ExibirTabuleiro(Lobby.IdPartida);
             if (verificaTabuleiro == "")
                 MessageBox.Show("Nenhuma jogada foi executada");
@@ -104,28 +124,28 @@ namespace Cant_stop
             {
                 verificaTabuleiro = verificaTabuleiro.Replace("\r", "");
                 string[] linhas = verificaTabuleiro.Split('\n');
-                MessageBox.Show(verificaTabuleiro);
-                
+
                 for (int i = 0; i < linhas.Length; i++)
                 {
-                    string[] posicoes = linhas[i].Split(',');
-                    if(linhas[i] != "")
+                    if (linhas[i] != "")    
                     {
+                        string[] posicoes = linhas[i].Split(',');
                         string coluna = posicoes[0];
-                        MessageBox.Show(coluna);
-
                         string linha = posicoes[1];
-                        MessageBox.Show(linha);
-
+                        string player = posicoes[2];
+                        string cor = validaAlpinista(player, posicoes);
                         int column = Convert.ToInt32(coluna) - 2;
                         int row = 13 - Convert.ToInt32(linha);
 
-                        //pega o controle que esta na posicção da peça;
+                        Console.WriteLine("{0}", linhas[i]);
+
+                        /*pega o controle que esta na posicção da peça;
                         Control posicao = tableLayoutPanel1.GetControlFromPosition(column, row);
-                        Image myimage = new Bitmap(@"..\..\Imagens\dado1.jpg");
+                        Image myimage = new Bitmap(@"..\..\Imagens\jogador" + cor + ".png");
                         posicao.BackgroundImage = myimage;
-                        posicao.BackgroundImageLayout = ImageLayout.Stretch;
-                    }                    
+                        posicao.BackgroundImageLayout = ImageLayout.Stretch;*/
+                        printaImagem(column, row, cor);
+                    }
                 }
             }
         }
@@ -222,5 +242,88 @@ namespace Cant_stop
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public void limpaTela()
+        {
+            for (int i = 0; i <= 12; i++)
+            {
+                for (int j = 0; j <= 10; j++)
+                {
+                    Control posicao = tableLayoutPanel1.GetControlFromPosition(j, i);
+                    if (posicao != null)
+                    {
+                        posicao.Controls.Clear();
+                    }
+                }
+            }
+        }
+
+        public void printaImagem(int coluna, int linha, string cor)
+        {
+            
+            Control posicao = tableLayoutPanel1.GetControlFromPosition(coluna, linha);
+            if (cor.Contains("vermelho"))
+            {
+                PictureBox pictureBox = new PictureBox();
+                posicao.Controls.Add(pictureBox);
+                pictureBox.Location = new Point(0, 0);
+                pictureBox.Width = 29;
+                pictureBox.Height = 23;
+                pictureBox.BackgroundImage = new Bitmap(@"..\..\Imagens\jogador" + cor + ".png");
+                pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            } else if (cor.Contains("azul"))
+            {
+                PictureBox pictureBox = new PictureBox();
+                posicao.Controls.Add(pictureBox);
+                pictureBox.Location = new Point(28, 0);
+                pictureBox.Width = 29;
+                pictureBox.Height = 23;
+                pictureBox.BackgroundImage = new Bitmap(@"..\..\Imagens\jogador" + cor + ".png");
+                pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            } else if (cor.Contains("verde"))
+            {
+                PictureBox pictureBox = new PictureBox();
+                posicao.Controls.Add(pictureBox);
+                pictureBox.Location = new Point(0, 24);
+                pictureBox.Width = 29;
+                pictureBox.Height = 23;
+                pictureBox.BackgroundImage = new Bitmap(@"..\..\Imagens\jogador" + cor + ".png");
+                pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            } else if (cor.Contains("amarelo"))
+            {
+                PictureBox pictureBox = new PictureBox();
+                posicao.Controls.Add(pictureBox);
+                pictureBox.Location = new Point(28, 24);
+                pictureBox.Width = 29;
+                pictureBox.Height = 23;
+                pictureBox.BackgroundImage = new Bitmap(@"..\..\Imagens\jogador" + cor + ".png");
+                pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+        }
+
+        public string validaAlpinista(string player, string[] posicoes)
+        {
+
+            string validaAlpinista = posicoes[3];
+
+            if (player == Lobby.jogadorVermelho)
+            {
+                cor = "vermelho"+validaAlpinista;
+            }
+            else if (player == Lobby.jogadorAzul)
+            {
+                cor = "azul"+validaAlpinista; 
+            }
+            else if (player == Lobby.jogadorVerde)
+            {
+                cor = "verde"+validaAlpinista; 
+            }
+            else if (player == Lobby.jogadorAmarelo)
+            {
+                cor = "amarelo"+validaAlpinista;
+            }
+
+            return cor;
+        }
     }
-}
+} 

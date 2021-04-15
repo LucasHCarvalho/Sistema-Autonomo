@@ -95,6 +95,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Imagens\jogadoramarelo.png" />
+    <Content Include="Imagens\jogadorazul.png" />
+    <Content Include="Imagens\jogadorverde.png" />
+    <Content Include="Imagens\jogadorvermelho.png" />
     <None Include="Imagens\FundoLobby.jpeg" />
     <None Include="Imagens\buttonicon.png" />
     <None Include="Imagens\boadgamelogo.jpg" />

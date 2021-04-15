@@ -21,6 +21,11 @@ namespace Cant_stop
         public static string jogadorAzul { get; set; }
         public static string jogadorVerde { get; set; }
         public static string jogadorAmarelo { get; set; }
+        public static string nomeJVermelho { get; set; }
+        public static string nomeJAzul { get; set; }
+        public static string nomeJVerde { get; set; }
+        public static string nomeJAmarelo { get; set; }
+
         public Lobby()
         {
             InitializeComponent();
@@ -52,22 +57,32 @@ namespace Cant_stop
             }
             
         }
-        public void playerCor(int numJogadores)
+        public void playerCor()
         {
-            string lista = lblTratativaErro.Text;
-            string[] itens = lista.Split(',');
-            if (numJogadores == 1)
+            for (int i = 0; i < (lstListaJogadores.Items.Count - 1); i++)
             {
-                jogadorVermelho = itens[2];
-            }else if(numJogadores == 2)
-            {
-                jogadorAzul = itens[2];
-            } else if(numJogadores == 3)
-            {
-                jogadorVerde = itens[2];
-            } else if(numJogadores == 4)
-            {
-                jogadorAmarelo = itens[2];
+                string lista = lstListaJogadores.Items[i].ToString();
+                string[] itens = lista.Split(',');
+                if (i == 0)
+                {
+                    jogadorVermelho = itens[0];
+                    nomeJVermelho = itens[1];
+                }
+                else if (i == 1)
+                {
+                    jogadorAzul = itens[0];
+                    nomeJAzul = itens[1];
+                }
+                else if (i == 2)
+                {
+                    jogadorVerde = itens[0];
+                    nomeJVerde = itens[1];
+                }
+                else
+                {
+                    jogadorAmarelo = itens[0];
+                    nomeJAmarelo = itens[1];
+                }
             }
         }
         private void btnMostraLista_Click(object sender, EventArgs e)
@@ -93,8 +108,8 @@ namespace Cant_stop
             string res = lblTratativaErro.Text.ToString().Substring(0, 1);
             if (res != "E")
             {
-                numJogadores += 1;
-                playerCor(numJogadores);
+                //numJogadores += 1;
+                //playerCor(numJogadores);
             
             mostrarJogadores(IdPartida);
             }
@@ -108,11 +123,18 @@ namespace Cant_stop
             if (res != "E")
             {
                 IdPartida = Convert.ToInt32(criarPartida);
-                string entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenhaPartida.Text);
-                lblTratativaErro.Text = entrar;
-                numJogadores += 1;
-                playerCor(numJogadores);
-                mostrarJogadores(IdPartida);
+                if (txtNomeJogador.Text != "")
+                {
+                    string entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenhaPartida.Text);
+                    lblTratativaErro.Text = entrar;
+                    mostrarJogadores(IdPartida);
+                }
+                else
+                {
+                    criarPartida = Jogo.CriarPartida(txtCriarPartida.Text, txtSenhaPartida.Text);
+                    mostrarJogadores(IdPartida);
+                }
+
             }
             else
             {
@@ -135,6 +157,7 @@ namespace Cant_stop
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+
             string lista = lblTratativaErro.Text.ToString();
             string[] itens = lista.Split(',');
             string res = lblTratativaErro.Text.ToString().Substring(0, 1);
@@ -148,6 +171,7 @@ namespace Cant_stop
                 IdJogador = Convert.ToInt32(itens[0]);
                 senhaJogador = itens[1];
                 string partida = Jogo.IniciarPartida(IdJogador, senhaJogador);
+                playerCor();
                 inGame ingame = new inGame();
                 ingame.ShowDialog();
             }
@@ -206,6 +230,26 @@ namespace Cant_stop
         private void lblCriarErro_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lstListarPartidas_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstListarPartidas_Click(object sender, EventArgs e)
+        {
+            string linha = lstListarPartidas.SelectedItem.ToString();
+            string[] itens = linha.Split(',');
+            IdPartida = Convert.ToInt32(itens[0]);
+
+            string listajogadores = Jogo.ListarJogadores(IdPartida);
+            string[] espaco = listajogadores.Split('\n');
+            lstListaJogadores.Items.Clear();
+            for (int i = 0; i < espaco.Length; i++)
+            {
+                lstListaJogadores.Items.Add(espaco[i]);
+            }
         }
     }
 }

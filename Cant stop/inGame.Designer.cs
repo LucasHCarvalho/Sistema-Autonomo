@@ -29,7 +29,6 @@ namespace Cant_stop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inGame));
             this.btnRolarDados = new System.Windows.Forms.Button();
             this.btnVerificar = new System.Windows.Forms.Button();
             this.picDado2 = new System.Windows.Forms.PictureBox();
@@ -45,12 +44,9 @@ namespace Cant_stop
             this.btnD1d4 = new System.Windows.Forms.Button();
             this.btnD2d3 = new System.Windows.Forms.Button();
             this.lblCor = new System.Windows.Forms.Label();
-            this.picPecaVermelha2 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.picPecaVermelha1 = new System.Windows.Forms.PictureBox();
-            this.picPecaVermelha3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel84 = new System.Windows.Forms.Panel();
             this.panel83 = new System.Windows.Forms.Panel();
@@ -136,14 +132,10 @@ namespace Cant_stop
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.picDado2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha3)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel45.SuspendLayout();
             this.SuspendLayout();
@@ -167,7 +159,7 @@ namespace Cant_stop
             this.btnVerificar.Name = "btnVerificar";
             this.btnVerificar.Size = new System.Drawing.Size(105, 85);
             this.btnVerificar.TabIndex = 7;
-            this.btnVerificar.Text = "Verifcar vez";
+            this.btnVerificar.Text = "Verificar vez";
             this.btnVerificar.UseVisualStyleBackColor = true;
             this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
             // 
@@ -243,17 +235,17 @@ namespace Cant_stop
             this.btnD1d2.Location = new System.Drawing.Point(2, 474);
             this.btnD1d2.Margin = new System.Windows.Forms.Padding(2);
             this.btnD1d2.Name = "btnD1d2";
-            this.btnD1d2.Size = new System.Drawing.Size(85, 36);
+            this.btnD1d2.Size = new System.Drawing.Size(55, 36);
             this.btnD1d2.TabIndex = 147;
             this.btnD1d2.UseVisualStyleBackColor = true;
             this.btnD1d2.Click += new System.EventHandler(this.btnDado1_Click);
             // 
             // btnD3d4
             // 
-            this.btnD3d4.Location = new System.Drawing.Point(92, 474);
+            this.btnD3d4.Location = new System.Drawing.Point(70, 474);
             this.btnD3d4.Margin = new System.Windows.Forms.Padding(2);
             this.btnD3d4.Name = "btnD3d4";
-            this.btnD3d4.Size = new System.Drawing.Size(85, 35);
+            this.btnD3d4.Size = new System.Drawing.Size(55, 35);
             this.btnD3d4.TabIndex = 148;
             this.btnD3d4.UseVisualStyleBackColor = true;
             this.btnD3d4.Click += new System.EventHandler(this.btnD3d4_Click);
@@ -263,17 +255,17 @@ namespace Cant_stop
             this.btnD1d3.Location = new System.Drawing.Point(2, 514);
             this.btnD1d3.Margin = new System.Windows.Forms.Padding(2);
             this.btnD1d3.Name = "btnD1d3";
-            this.btnD1d3.Size = new System.Drawing.Size(85, 37);
+            this.btnD1d3.Size = new System.Drawing.Size(55, 37);
             this.btnD1d3.TabIndex = 149;
             this.btnD1d3.UseVisualStyleBackColor = true;
             this.btnD1d3.Click += new System.EventHandler(this.btnD1d3_Click);
             // 
             // btnD2d4
             // 
-            this.btnD2d4.Location = new System.Drawing.Point(92, 514);
+            this.btnD2d4.Location = new System.Drawing.Point(70, 513);
             this.btnD2d4.Margin = new System.Windows.Forms.Padding(2);
             this.btnD2d4.Name = "btnD2d4";
-            this.btnD2d4.Size = new System.Drawing.Size(85, 37);
+            this.btnD2d4.Size = new System.Drawing.Size(55, 37);
             this.btnD2d4.TabIndex = 150;
             this.btnD2d4.UseVisualStyleBackColor = true;
             this.btnD2d4.Click += new System.EventHandler(this.btnD2d4_Click);
@@ -283,17 +275,17 @@ namespace Cant_stop
             this.btnD1d4.Location = new System.Drawing.Point(2, 556);
             this.btnD1d4.Margin = new System.Windows.Forms.Padding(2);
             this.btnD1d4.Name = "btnD1d4";
-            this.btnD1d4.Size = new System.Drawing.Size(85, 32);
+            this.btnD1d4.Size = new System.Drawing.Size(55, 35);
             this.btnD1d4.TabIndex = 151;
             this.btnD1d4.UseVisualStyleBackColor = true;
             this.btnD1d4.Click += new System.EventHandler(this.btnD1d4_Click);
             // 
             // btnD2d3
             // 
-            this.btnD2d3.Location = new System.Drawing.Point(92, 556);
+            this.btnD2d3.Location = new System.Drawing.Point(70, 554);
             this.btnD2d3.Margin = new System.Windows.Forms.Padding(2);
             this.btnD2d3.Name = "btnD2d3";
-            this.btnD2d3.Size = new System.Drawing.Size(85, 32);
+            this.btnD2d3.Size = new System.Drawing.Size(55, 37);
             this.btnD2d3.TabIndex = 152;
             this.btnD2d3.UseVisualStyleBackColor = true;
             this.btnD2d3.Click += new System.EventHandler(this.btnD2d3_Click);
@@ -310,68 +302,35 @@ namespace Cant_stop
             this.lblCor.TabIndex = 154;
             this.lblCor.Text = "Sua cor é: ";
             // 
-            // picPecaVermelha2
-            // 
-            this.picPecaVermelha2.BackColor = System.Drawing.Color.Transparent;
-            this.picPecaVermelha2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPecaVermelha2.BackgroundImage")));
-            this.picPecaVermelha2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPecaVermelha2.Location = new System.Drawing.Point(964, 179);
-            this.picPecaVermelha2.Name = "picPecaVermelha2";
-            this.picPecaVermelha2.Size = new System.Drawing.Size(29, 26);
-            this.picPecaVermelha2.TabIndex = 155;
-            this.picPecaVermelha2.TabStop = false;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(181, 556);
+            this.button1.Location = new System.Drawing.Point(138, 554);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 32);
+            this.button1.Size = new System.Drawing.Size(55, 37);
             this.button1.TabIndex = 160;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(181, 514);
+            this.button2.Location = new System.Drawing.Point(138, 513);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 37);
+            this.button2.Size = new System.Drawing.Size(55, 37);
             this.button2.TabIndex = 159;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(181, 474);
+            this.button3.Location = new System.Drawing.Point(138, 474);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 35);
+            this.button3.Size = new System.Drawing.Size(55, 35);
             this.button3.TabIndex = 158;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // picPecaVermelha1
-            // 
-            this.picPecaVermelha1.BackColor = System.Drawing.Color.Transparent;
-            this.picPecaVermelha1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPecaVermelha1.BackgroundImage")));
-            this.picPecaVermelha1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPecaVermelha1.Location = new System.Drawing.Point(964, 227);
-            this.picPecaVermelha1.Name = "picPecaVermelha1";
-            this.picPecaVermelha1.Size = new System.Drawing.Size(29, 26);
-            this.picPecaVermelha1.TabIndex = 161;
-            this.picPecaVermelha1.TabStop = false;
-            // 
-            // picPecaVermelha3
-            // 
-            this.picPecaVermelha3.BackColor = System.Drawing.Color.Transparent;
-            this.picPecaVermelha3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picPecaVermelha3.BackgroundImage")));
-            this.picPecaVermelha3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picPecaVermelha3.Location = new System.Drawing.Point(964, 265);
-            this.picPecaVermelha3.Name = "picPecaVermelha3";
-            this.picPecaVermelha3.Size = new System.Drawing.Size(29, 26);
-            this.picPecaVermelha3.TabIndex = 162;
-            this.picPecaVermelha3.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -380,8 +339,6 @@ namespace Cant_stop
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel1.BackgroundImage")));
-            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tableLayoutPanel1.ColumnCount = 11;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.090908F));
@@ -472,6 +429,11 @@ namespace Cant_stop
             this.tableLayoutPanel1.Controls.Add(this.panel75, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.panel80, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel85, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.panel7, 3, 11);
+            this.tableLayoutPanel1.Controls.Add(this.panel10, 2, 11);
+            this.tableLayoutPanel1.Controls.Add(this.panel11, 4, 11);
+            this.tableLayoutPanel1.Controls.Add(this.panel12, 5, 11);
             this.tableLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(259, 17);
@@ -594,7 +556,7 @@ namespace Cant_stop
             this.panel69.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel69.Location = new System.Drawing.Point(416, 387);
             this.panel69.Name = "panel69";
-            this.panel69.Size = new System.Drawing.Size(53, 38);
+            this.panel69.Size = new System.Drawing.Size(53, 42);
             this.panel69.TabIndex = 151;
             // 
             // panel68
@@ -952,6 +914,7 @@ namespace Cant_stop
             // 
             // panel9
             // 
+            this.panel9.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel9.Location = new System.Drawing.Point(62, 531);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(53, 41);
@@ -970,7 +933,7 @@ namespace Cant_stop
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(62, 578);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(53, 43);
+            this.panel1.Size = new System.Drawing.Size(53, 41);
             this.panel1.TabIndex = 149;
             // 
             // panel8
@@ -1129,50 +1092,42 @@ namespace Cant_stop
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel6.Location = new System.Drawing.Point(554, 547);
+            this.panel6.Location = new System.Drawing.Point(3, 531);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(53, 41);
-            this.panel6.TabIndex = 151;
+            this.panel6.TabIndex = 154;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel7.Location = new System.Drawing.Point(495, 547);
+            this.panel7.Location = new System.Drawing.Point(180, 531);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(53, 41);
-            this.panel7.TabIndex = 152;
+            this.panel7.TabIndex = 155;
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel10.Location = new System.Drawing.Point(436, 547);
+            this.panel10.Location = new System.Drawing.Point(121, 531);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(53, 41);
-            this.panel10.TabIndex = 153;
+            this.panel10.TabIndex = 156;
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel11.Location = new System.Drawing.Point(377, 547);
+            this.panel11.Location = new System.Drawing.Point(239, 531);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(53, 41);
-            this.panel11.TabIndex = 154;
+            this.panel11.TabIndex = 157;
             // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel12.Location = new System.Drawing.Point(318, 547);
+            this.panel12.Location = new System.Drawing.Point(298, 531);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(53, 43);
-            this.panel12.TabIndex = 155;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel13.Location = new System.Drawing.Point(259, 547);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(53, 41);
-            this.panel13.TabIndex = 150;
+            this.panel12.Size = new System.Drawing.Size(53, 41);
+            this.panel12.TabIndex = 158;
             // 
             // inGame
             // 
@@ -1182,17 +1137,8 @@ namespace Cant_stop
             this.BackgroundImage = global::Cant_stop.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1052, 660);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.picPecaVermelha2);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.picPecaVermelha3);
-            this.Controls.Add(this.panel10);
-            this.Controls.Add(this.picPecaVermelha1);
-            this.Controls.Add(this.panel11);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel12);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel13);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lblCor);
             this.Controls.Add(this.btnStop);
@@ -1220,9 +1166,6 @@ namespace Cant_stop
             ((System.ComponentModel.ISupportInitialize)(this.picDado3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDado4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPecaVermelha3)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel45.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1247,12 +1190,9 @@ namespace Cant_stop
         private System.Windows.Forms.Button btnD1d4;
         private System.Windows.Forms.Button btnD2d3;
         private System.Windows.Forms.Label lblCor;
-        private System.Windows.Forms.PictureBox picPecaVermelha2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.PictureBox picPecaVermelha1;
-        private System.Windows.Forms.PictureBox picPecaVermelha3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
@@ -1338,6 +1278,5 @@ namespace Cant_stop
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel13;
     }
 }
