@@ -25,6 +25,7 @@ namespace Cant_stop
         public static string nomeJAzul { get; set; }
         public static string nomeJVerde { get; set; }
         public static string nomeJAmarelo { get; set; }
+        public static string entrar { get; set; }
         public Lobby()
         {
             InitializeComponent();
@@ -107,13 +108,13 @@ namespace Cant_stop
             string linha = lstListarPartidas.SelectedItem.ToString();
             string[] itens = linha.Split(',');
             IdPartida = Convert.ToInt32(itens[0]);
-            string entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenhaPartida.Text);
-            lblTratativaErro.Text = entrar;
-            string res = lblTratativaErro.Text.ToString().Substring(0, 1);
-            if (res != "E")
+            entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenhaPartida.Text);
+            string res = entrar.Substring(0, 1);
+            if (res == "E")
             {
-                mostrarJogadores(IdPartida);
+                lblTratativaErro.Text = entrar;
             }
+            mostrarJogadores(IdPartida);
         }
 
         private void btnCriar_Click(object sender, EventArgs e)
@@ -124,8 +125,8 @@ namespace Cant_stop
             if (res != "E")
             {
                 IdPartida = Convert.ToInt32(criarPartida);
-                string entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenhaPartida.Text);
-                lblTratativaErro.Text = entrar;
+                entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenhaPartida.Text);
+                lblTratativaErro.Text = "Partida Criada! ";
                 mostrarJogadores(IdPartida);
             }
             else
@@ -149,9 +150,9 @@ namespace Cant_stop
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string lista = lblTratativaErro.Text.ToString();
+            string lista = entrar;
             string[] itens = lista.Split(',');
-            string res = lblTratativaErro.Text.ToString().Substring(0, 1);
+            string res = entrar.Substring(0, 1);
             if (res == "E")
             {
                 MessageBox.Show("Erro: Senha de acesso para iniciar partida incorreto", "Senha incorreta",

@@ -10,10 +10,18 @@ namespace Cant_stop
         public string dadosGlobal;
         public static int dado1, dado2, dado3, dado4;
         public string cor;
+        public static int optMovimento;
+        public int Alpinista1 = 0;
+        public int Alpinista2 = 0;
+        public int Alpinista3 = 0;
 
         public inGame()
         {
             InitializeComponent();
+            historicopartida();
+            verificadordeTabuleiro();
+            verificarvez();
+            //numOP();
         }
 
         public string somaDados(int dado1, int dado2)
@@ -29,6 +37,25 @@ namespace Cant_stop
             return soma;
         }
 
+        /*public void numOP()
+        {
+            if (Alpinista3 == 0 || Alpinista2 == 0)
+            {
+                btnD1d4.Visible = false;
+                btnD1d3.Visible = false;
+                btnd2d4.Visible = false;
+                btnD1d2.Visible = false;
+                btnd3d4.Visible = false;
+                btnd2d3.Visible = false;
+            }else {
+                if (somaDados(dado1, dado2) == || somaDados(dado1, dado2) == || somaDados(dado1, dado2) == ||
+                    somaDados(dado1, dado2) == || somaDados(dado1, dado2) == || somaDados(dado1, dado2) ||== )
+                {
+
+                }
+            }
+
+        }*/
         public void btnRolarDados_Click(object sender, EventArgs e)
         {
             dadosGlobal = Jogo.RolarDados(Lobby.IdJogador, Lobby.senhaJogador);
@@ -44,7 +71,7 @@ namespace Cant_stop
                 dado2 = Convert.ToInt32(dadosGlobal.Substring(3, 1));
                 dado3 = Convert.ToInt32(dadosGlobal.Substring(5, 1));
                 dado4 = Convert.ToInt32(dadosGlobal.Substring(7, 1));
-                Console.WriteLine("{0}-{1}-{2}-{3}", dado1, dado2, dado3, dado4);
+
             }
 
             for (int i = 1; i <= 6; i++)
@@ -70,39 +97,51 @@ namespace Cant_stop
                     picDado4.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
-            btnD1d2.Text = (dado1 + dado2).ToString() + " " + (dado3 + dado4).ToString();
-            btnD1d3.Text = (dado1 + dado3).ToString() + " " + (dado2 + dado4).ToString();
-            btnD1d4.Text = (dado1 + dado4).ToString() + " " + (dado3 + dado2).ToString();
+            btnD1d2d3d4.Text = (dado1 + dado2).ToString() + " e " + (dado3 + dado4).ToString();
+            btnD1d3d2d4.Text = (dado1 + dado3).ToString() + " e " + (dado2 + dado4).ToString();
+            btnD1d4d2d3.Text = (dado1 + dado4).ToString() + " e " + (dado3 + dado2).ToString();
 
-            btnD3d4.Text = (dado1 + dado2).ToString();
-            btnD2d4.Text = (dado1 + dado3).ToString();
-            btnD2d3.Text = (dado1 + dado4).ToString();
+            btnD1d2.Text = (dado1 + dado2).ToString();
+            btnD1d3.Text = (dado1 + dado3).ToString();
+            btnD1d4.Text = (dado1 + dado4).ToString();
 
-            button1.Text = (dado3 + dado4).ToString();
-            button2.Text = (dado2 + dado4).ToString();
-            button3.Text = (dado3 + dado2).ToString();
+            btnd2d3.Text = (dado3 + dado4).ToString();
+            btnd2d4.Text = (dado2 + dado4).ToString();
+            btnd3d4.Text = (dado3 + dado2).ToString();
         }
 
-        private void btnVerificar_Click(object sender, EventArgs e)
+        private void verificarvez()
         {
             string verificaVez = Jogo.VerificarVez(Lobby.IdPartida);
             string lista = verificaVez.ToString();
             string[] itens = lista.Split(',');
             if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorVermelho))
             {
-                MessageBox.Show("É a vez do " + Lobby.nomeJVermelho + " de cor vermelha");
+                lblCor.ForeColor = System.Drawing.Color.Red;
+                btnRolarDados.ForeColor = System.Drawing.Color.Red;
+                btnStop.ForeColor = System.Drawing.Color.Red;
+                lblCor.Text = "É a vez do " + Lobby.nomeJVermelho + " de cor vermelha";
             }
             else if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorAzul))
             {
-                MessageBox.Show("É a vez do " + Lobby.nomeJAzul + " de cor azul");
+                lblCor.ForeColor = System.Drawing.Color.Blue;
+                btnRolarDados.ForeColor = System.Drawing.Color.Blue;
+                btnStop.ForeColor = System.Drawing.Color.Blue;
+                lblCor.Text = "É a vez do " + Lobby.nomeJAzul + " de cor azul";
             }
             else if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorVerde))
             {
-                MessageBox.Show("É a vez do " + Lobby.nomeJVerde + " de cor verde");
+                lblCor.ForeColor = System.Drawing.Color.Green;
+                btnRolarDados.ForeColor = System.Drawing.Color.Green;
+                btnStop.ForeColor = System.Drawing.Color.Green;
+                lblCor.Text = "É a vez do " + Lobby.nomeJVerde + " de cor verde";
             }
             else
             {
-                MessageBox.Show("É a vez do " + Lobby.nomeJAmarelo + " de cor amarela");
+                lblCor.ForeColor = System.Drawing.Color.Yellow;
+                btnRolarDados.ForeColor = System.Drawing.Color.Yellow;
+                btnStop.ForeColor = System.Drawing.Color.Yellow;
+                lblCor.Text = "É a vez do " + Lobby.nomeJAmarelo + " de cor amarela";
             }
         }
 
@@ -113,22 +152,19 @@ namespace Cant_stop
                 MessageBox.Show(paraTabuleiro, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void btnTabuleiro_Click(object sender, EventArgs e)
+        private void verificadordeTabuleiro()
         {
-            limpaTela();
-
+            
             string verificaTabuleiro = Jogo.ExibirTabuleiro(Lobby.IdPartida);
-            if (verificaTabuleiro == "")
-                MessageBox.Show("Nenhuma jogada foi executada");
-            else
-            {
+                limpaTela();
                 verificaTabuleiro = verificaTabuleiro.Replace("\r", "");
                 string[] linhas = verificaTabuleiro.Split('\n');
 
                 for (int i = 0; i < linhas.Length; i++)
                 {
-                    if (linhas[i] != "")    
+                    if (linhas[i] != "")
                     {
+                        
                         string[] posicoes = linhas[i].Split(',');
                         string coluna = posicoes[0];
                         string linha = posicoes[1];
@@ -136,8 +172,17 @@ namespace Cant_stop
                         string cor = validaAlpinista(player, posicoes);
                         int column = Convert.ToInt32(coluna) - 2;
                         int row = 13 - Convert.ToInt32(linha);
-
-                        Console.WriteLine("{0}", linhas[i]);
+                    if (Alpinista3 == 0) {
+                        Alpinista3 = Convert.ToInt32(posicoes[0]);
+                    }else if(Alpinista2 == 0) 
+                    {
+                        Alpinista2 = Convert.ToInt32(posicoes[0]);
+                    }
+                    else if(Alpinista1 == 0)
+                    {
+                        Alpinista1 = Convert.ToInt32(posicoes[0]);
+                    }
+                    Console.WriteLine("{0}", linhas[i]);
 
                         /*pega o controle que esta na posicção da peça;
                         Control posicao = tableLayoutPanel1.GetControlFromPosition(column, row);
@@ -146,27 +191,29 @@ namespace Cant_stop
                         posicao.BackgroundImageLayout = ImageLayout.Stretch;*/
                         printaImagem(column, row, cor);
                     }
-                }
-            }
+                }         
+        }
+        private void btnTabuleiro_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void btnDado1_Click(object sender, EventArgs e)
         {
             string soma1 = somaDados(dado1, dado2);
             string soma2 = somaDados(dado3, dado4);
-
             string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (soma1 + soma2));
 
             if (mover != "")
-                MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(mover, "Movimento invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnD1d3_Click(object sender, EventArgs e)
         {
             string soma1 = somaDados(dado1, dado3);
             string soma2 = somaDados(dado2, dado4);
-
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (soma1 + soma2));
+ 
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", (soma1 + soma2));
 
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -176,8 +223,7 @@ namespace Cant_stop
         {
             string soma1 = somaDados(dado1, dado4);
             string soma2 = somaDados(dado2, dado3);
-
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (soma1 + soma2));
+            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", (soma1 + soma2));
 
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -236,11 +282,61 @@ namespace Cant_stop
         private void button1_Click(object sender, EventArgs e)
         {
             string soma1 = somaDados(dado2, dado3);
-
             string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2314", (soma1+"0"));
 
             if (mover != "")
                 MessageBox.Show(mover, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void lstHistorico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        public void historicopartida()
+        {
+            string retorno = Jogo.ExibirHistorico(Lobby.IdPartida);
+            retorno = retorno.Replace("\r", "");
+            string[] linha = retorno.Split('\n');
+            lstHistorico.Items.Clear();
+            for (int i = 0; i < linha.Length; i++)
+            {
+                lstHistorico.Items.Add(linha[i]);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            historicopartida();
+        }
+
+        private void timerTabuleiro_Tick(object sender, EventArgs e)
+        {
+            verificadordeTabuleiro();
+        }
+
+        private void timerVerificaVez_Tick(object sender, EventArgs e)
+        {
+            verificarvez();
+        }
+
+        private void inGame_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picDado2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picDado3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNoPlay_Click(object sender, EventArgs e)
+        {
+
         }
 
         public void limpaTela()
