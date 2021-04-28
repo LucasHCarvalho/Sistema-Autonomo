@@ -300,17 +300,17 @@ namespace Cant_stop
             // 
             this.lblCor.AutoSize = true;
             this.lblCor.BackColor = System.Drawing.Color.Transparent;
-            this.lblCor.Font = new System.Drawing.Font("Courier New", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCor.Location = new System.Drawing.Point(12, 326);
+            this.lblCor.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCor.Location = new System.Drawing.Point(12, 261);
             this.lblCor.Name = "lblCor";
-            this.lblCor.Size = new System.Drawing.Size(0, 22);
+            this.lblCor.Size = new System.Drawing.Size(0, 34);
             this.lblCor.TabIndex = 154;
             // 
             // btnd2d3
             // 
             this.btnd2d3.BackColor = System.Drawing.Color.White;
             this.btnd2d3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnd2d3.Location = new System.Drawing.Point(184, 720);
+            this.btnd2d3.Location = new System.Drawing.Point(184, 721);
             this.btnd2d3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnd2d3.Name = "btnd2d3";
             this.btnd2d3.Size = new System.Drawing.Size(73, 46);
@@ -1240,19 +1240,19 @@ namespace Cant_stop
             // timerHistorico
             // 
             this.timerHistorico.Enabled = true;
-            this.timerHistorico.Interval = 2000;
+            this.timerHistorico.Interval = 1500;
             this.timerHistorico.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timerTabuleiro
             // 
             this.timerTabuleiro.Enabled = true;
-            this.timerTabuleiro.Interval = 3000;
+            this.timerTabuleiro.Interval = 2500;
             this.timerTabuleiro.Tick += new System.EventHandler(this.timerTabuleiro_Tick);
             // 
             // timerVerificaVez
             // 
             this.timerVerificaVez.Enabled = true;
-            this.timerVerificaVez.Interval = 4000;
+            this.timerVerificaVez.Interval = 2000;
             this.timerVerificaVez.Tick += new System.EventHandler(this.timerVerificaVez_Tick);
             // 
             // inGame

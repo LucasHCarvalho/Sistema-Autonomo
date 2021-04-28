@@ -26,6 +26,7 @@ namespace Cant_stop
         public static string nomeJVerde { get; set; }
         public static string nomeJAmarelo { get; set; }
         public static string entrar { get; set; }
+        public static string nossoJogador { get; set; }
         public Lobby()
         {
             InitializeComponent();
@@ -97,14 +98,16 @@ namespace Cant_stop
             string[] linha = retorno.Split('\n');
 
             lstListarPartidas.Items.Clear();
-            for (int i = 0; i < linha.Length; i++)
+            for (int i = 0; i < linha.Length - 1; i++)
             {
                 lstListarPartidas.Items.Add(linha[i]);
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            nossoJogador = txtNomeJogador.Text;
             string linha = lstListarPartidas.SelectedItem.ToString();
             string[] itens = linha.Split(',');
             IdPartida = Convert.ToInt32(itens[0]);
@@ -114,11 +117,15 @@ namespace Cant_stop
             {
                 lblTratativaErro.Text = entrar;
             }
+            else {
+                lblTratativaErro.Text = "Você entrou na partida!";
             mostrarJogadores(IdPartida);
+            }
         }
 
         private void btnCriar_Click(object sender, EventArgs e)
         {
+            nossoJogador = txtNomeJogador.Text;
             string criarPartida = Jogo.CriarPartida(txtCriarPartida.Text, txtSenhaPartida.Text);
             lblTratativaErro.Text = criarPartida;
             string res = lblTratativaErro.Text.ToString().Substring(0, 1);
@@ -259,12 +266,22 @@ namespace Cant_stop
                 string listajogadores = Jogo.ListarJogadores(IdPartida);
                 string[] espaco = listajogadores.Split('\n');
                 lstListaJogadores.Items.Clear();
-                for (int i = 0; i < espaco.Length; i++)
+                for (int i = 0; i < espaco.Length - 1; i++)
                 {
                     lstListaJogadores.Items.Add(espaco[i]);
                 }
             }
         
+        }
+
+        private void txtNomeJogador_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void atualizaascoisa_Tick(object sender, EventArgs e)
+        {
+            mostrarLista();
         }
     }
 

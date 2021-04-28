@@ -129,11 +129,12 @@ namespace Cant_stop
             // 
             // txtNomeJogador
             // 
-            this.txtNomeJogador.Location = new System.Drawing.Point(459, 101);
+            this.txtNomeJogador.Location = new System.Drawing.Point(463, 103);
             this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNomeJogador.Name = "txtNomeJogador";
             this.txtNomeJogador.Size = new System.Drawing.Size(233, 22);
             this.txtNomeJogador.TabIndex = 11;
+            this.txtNomeJogador.TextChanged += new System.EventHandler(this.txtNomeJogador_TextChanged);
             // 
             // lblSenhaPartida
             // 
