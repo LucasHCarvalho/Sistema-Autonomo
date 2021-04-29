@@ -38,25 +38,7 @@ namespace Cant_stop
             return soma;
         }
 
-        /*public void numOP()
-        {
-            if (Alpinista3 == 0 || Alpinista2 == 0)
-            {
-                btnD1d4.Visible = false;
-                btnD1d3.Visible = false;
-                btnd2d4.Visible = false;
-                btnD1d2.Visible = false;
-                btnd3d4.Visible = false;
-                btnd2d3.Visible = false;
-            }else {
-                if (somaDados(dado1, dado2) == || somaDados(dado1, dado2) == || somaDados(dado1, dado2) == ||
-                    somaDados(dado1, dado2) == || somaDados(dado1, dado2) == || somaDados(dado1, dado2) ||== )
-                {
 
-                }
-            }
-
-        }*/
 
         public void rolardados()
         {
@@ -65,8 +47,8 @@ namespace Cant_stop
             dadosGlobal = dadosGlobal.Replace("\n", "");
             Console.WriteLine(dadosGlobal);
             string verificaDado = dadosGlobal.Substring(0, 1);
-            if (verificaDado == "E")
-                MessageBox.Show(dadosGlobal, "Ação Incompleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (verificaDado == "E") ;
+            //MessageBox.Show(dadosGlobal, "Ação Incompleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 dado1 = Convert.ToInt32(dadosGlobal.Substring(1, 1));
@@ -118,8 +100,8 @@ namespace Cant_stop
             dadosGlobal = dadosGlobal.Replace("\n", "");
             Console.WriteLine(dadosGlobal);
             string verificaDado = dadosGlobal.Substring(0, 1);
-            if (verificaDado == "E")
-                MessageBox.Show(dadosGlobal, "Ação Incompleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (verificaDado == "E") ;
+            //MessageBox.Show(dadosGlobal, "Ação Incompleta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 dado1 = Convert.ToInt32(dadosGlobal.Substring(1, 1));
@@ -201,63 +183,74 @@ namespace Cant_stop
                     NossaVez = false;
                 }
             }
-            else if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorAzul))
+            if (Lobby.jogadorAzul != null)
             {
-                lblCor.ForeColor = System.Drawing.Color.Blue;
-                btnRolarDados.ForeColor = System.Drawing.Color.Blue;
-                btnStop.ForeColor = System.Drawing.Color.Blue;
-                if (Lobby.nossoJogador == Lobby.nomeJAzul)
+                if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorAzul))
                 {
-                    lblCor.Text = "É a sua vez!";
-                    NossaVez = true;
+                    lblCor.ForeColor = System.Drawing.Color.Blue;
+                    btnRolarDados.ForeColor = System.Drawing.Color.Blue;
+                    btnStop.ForeColor = System.Drawing.Color.Blue;
+                    if (Lobby.nossoJogador == Lobby.nomeJAzul)
+                    {
+                        lblCor.Text = "É a sua vez!";
+                        NossaVez = true;
+                    }
+                    else
+                    {
+                        lblCor.Text = "É a vez do " + Lobby.nomeJAzul + " de cor azul";
+                        NossaVez = false;
+                    }
                 }
-                else { 
-                lblCor.Text = "É a vez do " + Lobby.nomeJAzul + " de cor azul";
+            }
+            if (Lobby.jogadorVerde != null)
+            {
+                if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorVerde))
+                {
+                    lblCor.ForeColor = System.Drawing.Color.YellowGreen;
+                    btnRolarDados.ForeColor = System.Drawing.Color.YellowGreen;
+                    btnStop.ForeColor = System.Drawing.Color.YellowGreen;
+                    if (Lobby.nossoJogador == Lobby.nomeJVerde)
+                    {
+                        lblCor.Text = "É a sua vez!";
+                        NossaVez = true;
+                    }
+                    else
+                    {
+                        lblCor.Text = "É a vez do " + Lobby.nomeJVerde + " de cor verde";
+                        NossaVez = false;
+                    }
+                }
+            }
+            if (Lobby.jogadorAmarelo != null)
+            {
+                if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorAmarelo))
+                {
+                    lblCor.ForeColor = System.Drawing.Color.Yellow;
+                    btnRolarDados.ForeColor = System.Drawing.Color.Yellow;
+                    btnStop.ForeColor = System.Drawing.Color.Yellow;
+                    if (Lobby.nossoJogador == Lobby.nomeJAmarelo)
+                    {
+                        lblCor.Text = "É a sua vez!";
+                        NossaVez = true;
+                    }
+                    lblCor.Text = "É a vez do " + Lobby.nomeJAmarelo + " de cor amarela";
                     NossaVez = false;
                 }
             }
-            else if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorVerde))
-            {
-                lblCor.ForeColor = System.Drawing.Color.YellowGreen;
-                btnRolarDados.ForeColor = System.Drawing.Color.YellowGreen;
-                btnStop.ForeColor = System.Drawing.Color.YellowGreen;
-                if (Lobby.nossoJogador == Lobby.nomeJVerde)
-                {
-                    lblCor.Text = "É a sua vez!";
-                    NossaVez = true;
-                }
-                else { 
-                lblCor.Text = "É a vez do " + Lobby.nomeJVerde + " de cor verde";
-                    NossaVez = false;
-                }
-            }
-            else
-            {
-                lblCor.ForeColor = System.Drawing.Color.Yellow;
-                btnRolarDados.ForeColor = System.Drawing.Color.Yellow;
-                btnStop.ForeColor = System.Drawing.Color.Yellow;
-                if (Lobby.nossoJogador == Lobby.nomeJAmarelo)
-                {
-                    lblCor.Text = "É a sua vez!";
-                    NossaVez = true;
-                }
-                lblCor.Text = "É a vez do " + Lobby.nomeJAmarelo + " de cor amarela";
-                    NossaVez = false;
-            }
-
         }
 
         public void acabaVez()
         {
+            NossaVez = false;
             string paraTabuleiro = Jogo.Parar(Lobby.IdJogador, Lobby.senhaJogador);
-            if (paraTabuleiro != "")
-                MessageBox.Show(paraTabuleiro, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (paraTabuleiro != "");
+                //MessageBox.Show(paraTabuleiro, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         private void btnStop_Click(object sender, EventArgs e)
         {
             string paraTabuleiro = Jogo.Parar(Lobby.IdJogador, Lobby.senhaJogador);
-            if (paraTabuleiro != "")
-                MessageBox.Show(paraTabuleiro, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (paraTabuleiro != "") ;
+                //MessageBox.Show(paraTabuleiro, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void verificadordeTabuleiro()

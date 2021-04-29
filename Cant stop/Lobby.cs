@@ -74,17 +74,17 @@ namespace Cant_stop
                     jogadorVermelho = itens[0];
                     nomeJVermelho = itens[1];
                 }
-                else if (i == 1)
+                 if (i == 1)
                 {
                     jogadorAzul = itens[0];
                     nomeJAzul = itens[1];
                 }
-                else if (i == 2)
+                 if (i == 2)
                 {
                     jogadorVerde = itens[0];
                     nomeJVerde = itens[1];
                 }
-                else
+                if(i == 3)
                 {
                     jogadorAmarelo = itens[0];
                     nomeJAmarelo = itens[1];
