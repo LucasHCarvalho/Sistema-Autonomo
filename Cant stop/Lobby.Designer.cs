@@ -53,11 +53,10 @@ namespace Cant_stop
             this.lstListarPartidas.BackColor = System.Drawing.Color.DarkGray;
             this.lstListarPartidas.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstListarPartidas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lstListarPartidas.ItemHeight = 22;
-            this.lstListarPartidas.Location = new System.Drawing.Point(3, 25);
-            this.lstListarPartidas.Margin = new System.Windows.Forms.Padding(4);
+            this.lstListarPartidas.ItemHeight = 17;
+            this.lstListarPartidas.Location = new System.Drawing.Point(2, 20);
             this.lstListarPartidas.Name = "lstListarPartidas";
-            this.lstListarPartidas.Size = new System.Drawing.Size(279, 400);
+            this.lstListarPartidas.Size = new System.Drawing.Size(210, 310);
             this.lstListarPartidas.TabIndex = 1;
             this.lstListarPartidas.SelectedIndexChanged += new System.EventHandler(this.lstListarPartidas_SelectedIndexChanged_2);
             // 
@@ -68,14 +67,14 @@ namespace Cant_stop
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.Turquoise;
-            this.btnEntrar.Location = new System.Drawing.Point(450, 213);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEntrar.Location = new System.Drawing.Point(338, 173);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(125, 85);
+            this.btnEntrar.Size = new System.Drawing.Size(94, 69);
             this.btnEntrar.TabIndex = 3;
             this.btnEntrar.Text = "Entrar na Partida";
             this.btnEntrar.UseVisualStyleBackColor = false;
-            this.btnEntrar.Click += new System.EventHandler(this.button1_Click);
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // btnCriar
             // 
@@ -84,10 +83,10 @@ namespace Cant_stop
             this.btnCriar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCriar.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCriar.ForeColor = System.Drawing.Color.Turquoise;
-            this.btnCriar.Location = new System.Drawing.Point(581, 213);
-            this.btnCriar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCriar.Location = new System.Drawing.Point(436, 173);
+            this.btnCriar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCriar.Name = "btnCriar";
-            this.btnCriar.Size = new System.Drawing.Size(115, 85);
+            this.btnCriar.Size = new System.Drawing.Size(86, 69);
             this.btnCriar.TabIndex = 4;
             this.btnCriar.Text = "Criar Partida";
             this.btnCriar.UseVisualStyleBackColor = false;
@@ -95,10 +94,10 @@ namespace Cant_stop
             // 
             // txtCriarPartida
             // 
-            this.txtCriarPartida.Location = new System.Drawing.Point(459, 43);
-            this.txtCriarPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCriarPartida.Location = new System.Drawing.Point(344, 35);
+            this.txtCriarPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCriarPartida.Name = "txtCriarPartida";
-            this.txtCriarPartida.Size = new System.Drawing.Size(237, 22);
+            this.txtCriarPartida.Size = new System.Drawing.Size(179, 20);
             this.txtCriarPartida.TabIndex = 6;
             // 
             // lblCriarPartida
@@ -107,12 +106,12 @@ namespace Cant_stop
             this.lblCriarPartida.BackColor = System.Drawing.Color.Transparent;
             this.lblCriarPartida.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCriarPartida.ForeColor = System.Drawing.Color.Blue;
-            this.lblCriarPartida.Location = new System.Drawing.Point(466, 16);
+            this.lblCriarPartida.Location = new System.Drawing.Point(350, 13);
+            this.lblCriarPartida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCriarPartida.Name = "lblCriarPartida";
-            this.lblCriarPartida.Size = new System.Drawing.Size(237, 23);
+            this.lblCriarPartida.Size = new System.Drawing.Size(186, 18);
             this.lblCriarPartida.TabIndex = 7;
             this.lblCriarPartida.Text = "Digite o nome da partida";
-            this.lblCriarPartida.Click += new System.EventHandler(this.lblCriarPartida_Click);
             // 
             // lblNomeJogador
             // 
@@ -120,21 +119,20 @@ namespace Cant_stop
             this.lblNomeJogador.BackColor = System.Drawing.Color.Transparent;
             this.lblNomeJogador.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeJogador.ForeColor = System.Drawing.Color.Blue;
-            this.lblNomeJogador.Location = new System.Drawing.Point(499, 78);
+            this.lblNomeJogador.Location = new System.Drawing.Point(374, 63);
+            this.lblNomeJogador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNomeJogador.Name = "lblNomeJogador";
-            this.lblNomeJogador.Size = new System.Drawing.Size(154, 23);
+            this.lblNomeJogador.Size = new System.Drawing.Size(124, 18);
             this.lblNomeJogador.TabIndex = 10;
             this.lblNomeJogador.Text = "Digite seu nome";
-            this.lblNomeJogador.Click += new System.EventHandler(this.lblNomeJogador_Click);
             // 
             // txtNomeJogador
             // 
-            this.txtNomeJogador.Location = new System.Drawing.Point(463, 103);
-            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNomeJogador.Location = new System.Drawing.Point(347, 84);
+            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomeJogador.Name = "txtNomeJogador";
-            this.txtNomeJogador.Size = new System.Drawing.Size(233, 22);
+            this.txtNomeJogador.Size = new System.Drawing.Size(176, 20);
             this.txtNomeJogador.TabIndex = 11;
-            this.txtNomeJogador.TextChanged += new System.EventHandler(this.txtNomeJogador_TextChanged);
             // 
             // lblSenhaPartida
             // 
@@ -142,21 +140,20 @@ namespace Cant_stop
             this.lblSenhaPartida.BackColor = System.Drawing.Color.Transparent;
             this.lblSenhaPartida.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenhaPartida.ForeColor = System.Drawing.Color.Blue;
-            this.lblSenhaPartida.Location = new System.Drawing.Point(455, 149);
+            this.lblSenhaPartida.Location = new System.Drawing.Point(341, 121);
+            this.lblSenhaPartida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSenhaPartida.Name = "lblSenhaPartida";
-            this.lblSenhaPartida.Size = new System.Drawing.Size(242, 23);
+            this.lblSenhaPartida.Size = new System.Drawing.Size(189, 18);
             this.lblSenhaPartida.TabIndex = 12;
             this.lblSenhaPartida.Text = "Digite a senha da partida";
-            this.lblSenhaPartida.Click += new System.EventHandler(this.lblSenhaJogador_Click);
             // 
             // txtSenhaPartida
             // 
-            this.txtSenhaPartida.Location = new System.Drawing.Point(459, 174);
-            this.txtSenhaPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSenhaPartida.Location = new System.Drawing.Point(344, 141);
+            this.txtSenhaPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSenhaPartida.Name = "txtSenhaPartida";
-            this.txtSenhaPartida.Size = new System.Drawing.Size(237, 22);
+            this.txtSenhaPartida.Size = new System.Drawing.Size(179, 20);
             this.txtSenhaPartida.TabIndex = 13;
-            this.txtSenhaPartida.TextChanged += new System.EventHandler(this.txtSenhaPartida_TextChanged_1);
             // 
             // lstListaJogadores
             // 
@@ -164,13 +161,12 @@ namespace Cant_stop
             this.lstListaJogadores.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstListaJogadores.ForeColor = System.Drawing.Color.Indigo;
             this.lstListaJogadores.FormattingEnabled = true;
-            this.lstListaJogadores.ItemHeight = 22;
-            this.lstListaJogadores.Location = new System.Drawing.Point(823, 32);
-            this.lstListaJogadores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lstListaJogadores.ItemHeight = 17;
+            this.lstListaJogadores.Location = new System.Drawing.Point(617, 26);
+            this.lstListaJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lstListaJogadores.Name = "lstListaJogadores";
-            this.lstListaJogadores.Size = new System.Drawing.Size(225, 180);
+            this.lstListaJogadores.Size = new System.Drawing.Size(170, 140);
             this.lstListaJogadores.TabIndex = 14;
-            this.lstListaJogadores.SelectedIndexChanged += new System.EventHandler(this.lstListaJogadores_SelectedIndexChanged);
             // 
             // lblVersao
             // 
@@ -178,9 +174,10 @@ namespace Cant_stop
             this.lblVersao.BackColor = System.Drawing.Color.Transparent;
             this.lblVersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVersao.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblVersao.Location = new System.Drawing.Point(-1, 470);
+            this.lblVersao.Location = new System.Drawing.Point(-1, 382);
+            this.lblVersao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVersao.Name = "lblVersao";
-            this.lblVersao.Size = new System.Drawing.Size(68, 20);
+            this.lblVersao.Size = new System.Drawing.Size(59, 17);
             this.lblVersao.TabIndex = 15;
             this.lblVersao.Text = "Versão\r\n";
             // 
@@ -190,9 +187,10 @@ namespace Cant_stop
             this.lblTratativaErro.BackColor = System.Drawing.Color.Transparent;
             this.lblTratativaErro.Font = new System.Drawing.Font("Papyrus", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTratativaErro.ForeColor = System.Drawing.Color.Lime;
-            this.lblTratativaErro.Location = new System.Drawing.Point(469, 405);
+            this.lblTratativaErro.Location = new System.Drawing.Point(352, 329);
+            this.lblTratativaErro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTratativaErro.Name = "lblTratativaErro";
-            this.lblTratativaErro.Size = new System.Drawing.Size(0, 30);
+            this.lblTratativaErro.Size = new System.Drawing.Size(0, 24);
             this.lblTratativaErro.TabIndex = 18;
             // 
             // label1
@@ -201,9 +199,10 @@ namespace Cant_stop
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.label1.Location = new System.Drawing.Point(819, 9);
+            this.label1.Location = new System.Drawing.Point(614, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 23);
+            this.label1.Size = new System.Drawing.Size(78, 18);
             this.label1.TabIndex = 20;
             this.label1.Text = "Jogadores";
             // 
@@ -214,8 +213,9 @@ namespace Cant_stop
             this.label2.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.label2.Location = new System.Drawing.Point(-1, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 23);
+            this.label2.Size = new System.Drawing.Size(65, 18);
             this.label2.TabIndex = 21;
             this.label2.Text = "Partidas";
             // 
@@ -226,14 +226,14 @@ namespace Cant_stop
             this.btnIniciarPartida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarPartida.Font = new System.Drawing.Font("Bauhaus 93", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarPartida.ForeColor = System.Drawing.Color.Turquoise;
-            this.btnIniciarPartida.Location = new System.Drawing.Point(516, 302);
-            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnIniciarPartida.Location = new System.Drawing.Point(387, 245);
+            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnIniciarPartida.Name = "btnIniciarPartida";
-            this.btnIniciarPartida.Size = new System.Drawing.Size(132, 85);
+            this.btnIniciarPartida.Size = new System.Drawing.Size(99, 69);
             this.btnIniciarPartida.TabIndex = 17;
             this.btnIniciarPartida.Text = "Iniciar Partida";
             this.btnIniciarPartida.UseVisualStyleBackColor = false;
-            this.btnIniciarPartida.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnIniciarPartida.Click += new System.EventHandler(this.btnIniciarPartida_Click_1);
             // 
             // btnMostraLista
             // 
@@ -244,22 +244,21 @@ namespace Cant_stop
             this.btnMostraLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostraLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostraLista.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.btnMostraLista.Location = new System.Drawing.Point(290, 25);
-            this.btnMostraLista.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMostraLista.Location = new System.Drawing.Point(218, 20);
             this.btnMostraLista.Name = "btnMostraLista";
-            this.btnMostraLista.Size = new System.Drawing.Size(42, 32);
+            this.btnMostraLista.Size = new System.Drawing.Size(32, 26);
             this.btnMostraLista.TabIndex = 0;
             this.btnMostraLista.UseVisualStyleBackColor = false;
             this.btnMostraLista.Click += new System.EventHandler(this.btnMostraLista_Click);
             // 
             // Lobby
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGreen;
             this.BackgroundImage = global::Cant_stop.Properties.Resources.FundoLobby;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1060, 499);
+            this.ClientSize = new System.Drawing.Size(795, 405);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTratativaErro);
@@ -277,10 +276,8 @@ namespace Cant_stop
             this.Controls.Add(this.lstListarPartidas);
             this.Controls.Add(this.btnMostraLista);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Lobby";
             this.Text = "Lobby Can\'t Stop";
-            this.Load += new System.EventHandler(this.Lobby_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

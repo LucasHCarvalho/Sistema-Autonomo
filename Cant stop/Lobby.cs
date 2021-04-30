@@ -13,6 +13,9 @@ namespace Cant_stop
 {
     public partial class Lobby : Form
     {
+        /*
+            Variaveis
+        */
         public static int IdPartida { get; set; }
         public static int IdJogador { get; set; }
         public static string senhaJogador { get; set; }
@@ -27,6 +30,10 @@ namespace Cant_stop
         public static string nomeJAmarelo { get; set; }
         public static string entrar { get; set; }
         public static string nossoJogador { get; set; }
+        
+        /*
+            Funções
+        */
         public Lobby()
         {
             InitializeComponent();
@@ -34,11 +41,6 @@ namespace Cant_stop
             mostrarLista();
         }
 
-        /*public void tocamusica()
-        {
-            SoundPlayer splayer = new SoundPlayer(@"..\..\Imagens\lobbymusic.wav");
-            splayer.Play();
-        }*/
         public void mostrarLista()
         {
             string retorno = Jogo.ListarPartidas("T");
@@ -46,22 +48,23 @@ namespace Cant_stop
             string[] linha = retorno.Split('\n');
 
             lstListarPartidas.Items.Clear();
-            for (int i = 0; i < linha.Length; i++)
+
+            for (int i = 0; i < linha.Length - 1; i++)
             {
                 lstListarPartidas.Items.Add(linha[i]);
             }
-
         }
         public void mostrarJogadores(int IdPartida)
         {
             string listajogadores = Jogo.ListarJogadores(IdPartida);
             string[] espaco = listajogadores.Split('\n');
+
             lstListaJogadores.Items.Clear();
+
             for (int i = 0; i < espaco.Length; i++)
             {
                 lstListaJogadores.Items.Add(espaco[i]);
             }
-
         }
         public void playerCor()
         {
@@ -73,21 +76,25 @@ namespace Cant_stop
                 {
                     jogadorVermelho = itens[0];
                     nomeJVermelho = itens[1];
+                    Console.WriteLine("Jogador Vermelho Criado: " + jogadorVermelho);
                 }
-                 if (i == 1)
+                else if (i == 1)
                 {
                     jogadorAzul = itens[0];
                     nomeJAzul = itens[1];
+                    Console.WriteLine("Jogador Azul Criado: " + jogadorAzul);
                 }
-                 if (i == 2)
+                else if (i == 2)
                 {
                     jogadorVerde = itens[0];
                     nomeJVerde = itens[1];
+                    Console.WriteLine("Jogador Verde Criado: " + jogadorVerde);
                 }
-                if(i == 3)
+                else if (i == 3)
                 {
                     jogadorAmarelo = itens[0];
                     nomeJAmarelo = itens[1];
+                    Console.WriteLine("Jogador Amarelo Criado: " + jogadorAmarelo);
                 }
             }
         }
@@ -98,38 +105,40 @@ namespace Cant_stop
             string[] linha = retorno.Split('\n');
 
             lstListarPartidas.Items.Clear();
+
             for (int i = 0; i < linha.Length - 1; i++)
             {
                 lstListarPartidas.Items.Add(linha[i]);
             }
-
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEntrar_Click(object sender, EventArgs e)
         {
             nossoJogador = txtNomeJogador.Text;
+
             string linha = lstListarPartidas.SelectedItem.ToString();
             string[] itens = linha.Split(',');
+
             IdPartida = Convert.ToInt32(itens[0]);
             entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenhaPartida.Text);
-            string res = entrar.Substring(0, 1);
-            if (res == "E")
+
+            if (entrar.Substring(0, 1) == "E")
             {
                 lblTratativaErro.Text = entrar;
             }
-            else {
+            else 
+            {
                 lblTratativaErro.Text = "Você entrou na partida!";
-            mostrarJogadores(IdPartida);
+                mostrarJogadores(IdPartida);
             }
         }
-
         private void btnCriar_Click(object sender, EventArgs e)
         {
             nossoJogador = txtNomeJogador.Text;
+
             string criarPartida = Jogo.CriarPartida(txtCriarPartida.Text, txtSenhaPartida.Text);
             lblTratativaErro.Text = criarPartida;
-            string res = lblTratativaErro.Text.ToString().Substring(0, 1);
-            if (res != "E")
+
+            if (criarPartida.Substring(0, 1) != "E")
             {
                 IdPartida = Convert.ToInt32(criarPartida);
                 entrar = Jogo.EntrarPartida(IdPartida, txtNomeJogador.Text, txtSenhaPartida.Text);
@@ -142,25 +151,12 @@ namespace Cant_stop
             }
             mostrarLista();
         }
-
-        private void btnListaJogadores_Click(object sender, EventArgs e)
-        {
-            string listajogadores = Jogo.ListarJogadores(IdPartida);
-            string[] espaco = listajogadores.Split('\n');
-            lstListaJogadores.Items.Clear();
-            for (int i = 0; i < espaco.Length; i++)
-            {
-                lstListaJogadores.Items.Add(espaco[i]);
-            }
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnIniciarPartida_Click_1(object sender, EventArgs e)
         {
             string lista = entrar;
             string[] itens = lista.Split(',');
-            string res = entrar.Substring(0, 1);
-            if (res == "E")
+
+            if (entrar.Substring(0, 1) == "E")
             {
                 MessageBox.Show("Erro: Senha de acesso para iniciar partida incorreto", "Senha incorreta",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -174,64 +170,8 @@ namespace Cant_stop
                 inGame ingame = new inGame();
                 ingame.ShowDialog();
             }
-        }
-
-        private void Lobby_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSenha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSenhaPartida_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstListarPartidas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTratativaErro_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnListaPartidas_Click(object sender, EventArgs e)
-        {
-            mostrarLista();
-        }
-
-        private void lblSenhaJogador_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSenhaPartida_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lobby_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstListaJogadores_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCriarErro_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lstListarPartidas_SelectedIndexChanged_1(object sender, EventArgs e)
+        }        
+        private void lstListarPartidas_SelectedIndexChanged_2(object sender, EventArgs e)
         {
             string linha = lstListarPartidas.SelectedItem.ToString();
             string[] itens = linha.Split(',');
@@ -239,50 +179,19 @@ namespace Cant_stop
 
             string listajogadores = Jogo.ListarJogadores(IdPartida);
             string[] espaco = listajogadores.Split('\n');
+
             lstListaJogadores.Items.Clear();
+
             for (int i = 0; i < espaco.Length; i++)
             {
                 lstListaJogadores.Items.Add(espaco[i]);
             }
         }
 
-        private void lblCriarPartida_Click(object sender, EventArgs e)
+        /*public void tocamusica()
         {
-
-        }
-
-        private void lblNomeJogador_Click(object sender, EventArgs e)
-        {
-
-        }
-        
-        private void lstListarPartidas_SelectedIndexChanged_2(object sender, EventArgs e)
-        {
-            {
-                string linha = lstListarPartidas.SelectedItem.ToString();
-                string[] itens = linha.Split(',');
-                IdPartida = Convert.ToInt32(itens[0]);
-
-                string listajogadores = Jogo.ListarJogadores(IdPartida);
-                string[] espaco = listajogadores.Split('\n');
-                lstListaJogadores.Items.Clear();
-                for (int i = 0; i < espaco.Length - 1; i++)
-                {
-                    lstListaJogadores.Items.Add(espaco[i]);
-                }
-            }
-        
-        }
-
-        private void txtNomeJogador_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void atualizaascoisa_Tick(object sender, EventArgs e)
-        {
-            mostrarLista();
-        }
+            SoundPlayer splayer = new SoundPlayer(@"..\..\Imagens\lobbymusic.wav");
+            splayer.Play();
+        }*/
     }
-
 }
