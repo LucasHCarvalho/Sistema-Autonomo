@@ -39,6 +39,9 @@ namespace Cant_stop
             InitializeComponent();
             lblVersao.Text = "Versão " + Jogo.Versao;
             mostrarLista();
+            lstListaJogadores.Margin = new Padding(0, 0, 0, 10);
+            lstListaJogadores.Padding = new Padding(10);
+            lstListaJogadores.Visible = false;
         }
 
         public void mostrarLista()
@@ -56,6 +59,15 @@ namespace Cant_stop
         }
         public void mostrarJogadores(int IdPartida)
         {
+            pcVermelho.Visible = false;
+            pcAzul.Visible = false;
+            pcVerde.Visible = false;
+            pcAmarelo.Visible = false;
+            lblVermelho.Visible = false;
+            lblAzul.Visible = false;
+            lblVerde.Visible = false;
+            lblAmarelo.Visible = false;
+
             string listajogadores = Jogo.ListarJogadores(IdPartida);
             string[] espaco = listajogadores.Split('\n');
 
@@ -64,6 +76,27 @@ namespace Cant_stop
             for (int i = 0; i < espaco.Length; i++)
             {
                 lstListaJogadores.Items.Add(espaco[i]);
+                if(i == 1)
+                {
+                    pcVermelho.Visible = true;
+                    lblVermelho.Visible = true;
+                }
+                if (i == 2)
+                {
+                    pcAzul.Visible = true;
+                    lblAzul.Visible = true;
+                }
+                if (i == 3)
+                {
+                    pcVerde.Visible = true;
+                    lblVerde.Visible = true;
+                }
+                if (i == 4)
+                {
+                    pcAmarelo.Visible = true;
+                    lblAmarelo.Visible = true;
+                }
+
             }
         }
         public void playerCor()
@@ -76,24 +109,28 @@ namespace Cant_stop
                 {
                     jogadorVermelho = itens[0];
                     nomeJVermelho = itens[1];
+                    lblVermelho.Text = nomeJVermelho;
                     Console.WriteLine("Jogador Vermelho Criado: " + jogadorVermelho);
                 }
                 else if (i == 1)
                 {
                     jogadorAzul = itens[0];
                     nomeJAzul = itens[1];
+                    lblAzul.Text = nomeJAzul;
                     Console.WriteLine("Jogador Azul Criado: " + jogadorAzul);
                 }
                 else if (i == 2)
                 {
                     jogadorVerde = itens[0];
                     nomeJVerde = itens[1];
+                    lblVerde.Text = nomeJVerde;
                     Console.WriteLine("Jogador Verde Criado: " + jogadorVerde);
                 }
                 else if (i == 3)
                 {
                     jogadorAmarelo = itens[0];
                     nomeJAmarelo = itens[1];
+                    lblAmarelo.Text = nomeJAmarelo;
                     Console.WriteLine("Jogador Amarelo Criado: " + jogadorAmarelo);
                 }
             }
@@ -176,16 +213,94 @@ namespace Cant_stop
             string linha = lstListarPartidas.SelectedItem.ToString();
             string[] itens = linha.Split(',');
             IdPartida = Convert.ToInt32(itens[0]);
+            mostrarJogadores(IdPartida);
+            playerCor();
 
-            string listajogadores = Jogo.ListarJogadores(IdPartida);
-            string[] espaco = listajogadores.Split('\n');
+        }
 
-            lstListaJogadores.Items.Clear();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mostrarJogadores(IdPartida);
+        }
 
-            for (int i = 0; i < espaco.Length; i++)
-            {
-                lstListaJogadores.Items.Add(espaco[i]);
-            }
+        private void Lobby_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTratativaErro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblVersao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstListaJogadores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSenhaPartida_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSenhaPartida_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNomeJogador_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNomeJogador_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCriarPartida_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCriarPartida_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pcAmarelo_Click(object sender, EventArgs e)
+        {
+
         }
 
         /*public void tocamusica()
