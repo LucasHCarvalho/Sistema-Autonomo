@@ -22,7 +22,7 @@ namespace Cant_stop
         public string validaBouA;
         public int pontos = 0;
         public int alpinista = 3;
-
+        
         List<Trilhas> trilhas = new List<Trilhas>();
         /*
             Funções
@@ -298,37 +298,31 @@ namespace Cant_stop
                 if (trilha.Id == opcao1.Substring(0, 1))
                 {
                     pontos1 += trilha.PontosSemAlpinista;
-                    Console.WriteLine(pontos1);
                 }
 
                 if (trilha.Id == opcao1.Substring(1, 1))
                 {
                     pontos1 += trilha.PontosSemAlpinista;
-                    Console.WriteLine(pontos1);
                 }
 
                 if (trilha.Id == opcao2.Substring(0, 1))
                 {
                     pontos2 += trilha.PontosSemAlpinista;
-                    Console.WriteLine(pontos2);
                 }
 
                 if (trilha.Id == opcao2.Substring(1, 1))
                 {
                     pontos2 += trilha.PontosSemAlpinista;
-                    Console.WriteLine(pontos2);
                 }
 
                 if (trilha.Id == opcao3.Substring(0, 1))
                 {
                     pontos3 += trilha.PontosSemAlpinista;
-                    Console.WriteLine(pontos3);
                 }
 
                 if (trilha.Id == opcao3.Substring(1, 1))
                 {
                     pontos3 += trilha.PontosSemAlpinista;
-                    Console.WriteLine(pontos3);
                 }
 
             }
@@ -337,24 +331,27 @@ namespace Cant_stop
             {
                 pontos += pontos1;
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", opcao1);
+
             }
 
             else if (pontos2 >= pontos1 && pontos2 >= pontos3)
             {
                 pontos += pontos2;
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", opcao2);
+
             }
 
             else
             {
                 pontos += pontos3;
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", opcao3);
+
             }
 
             if (mover != "")
             {
 
-                mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", opcao1);
+                mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", opcao1);
 
                 if (mover != "")
                 {
@@ -363,7 +360,7 @@ namespace Cant_stop
 
                     if (mover != "")
                     {
-                        mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2413", opcao3);
+                        mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", opcao3);
 
                         if (mover != "")
                         {
@@ -373,23 +370,28 @@ namespace Cant_stop
                         {
                             pontos += pontos3;
 
+
                         }
 
                     }
                     else
                     {
                         pontos += pontos2;
+
                     }
                 }
                 else
                 {
                     pontos += pontos1;
+
                 }
+                Console.WriteLine(mover);
             }
         }
 
         public void movimenta1()
         {
+            alpinista -= 1;
             string opcao1 = move1OP1();
             string opcao2 = move1OP2();
             string opcao3 = move1OP3();
@@ -527,124 +529,14 @@ namespace Cant_stop
                     pontos += pontos1;
                 }
             }
-
+            Console.WriteLine(mover);
         }
 
         public void movimentaAlpinista()
         {
 
         }
-        /*public void move2OP1()
-        {
-            //somad1d2 + d3d4
-            string soma1 = somaDados(dado1, dado2);
-            string soma2 = somaDados(dado3, dado4);
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (soma1 + soma2));
 
-            if (mover != "")
-            {
-                move2OP2();
-            }
-        }
-        public void move2OP2()
-        {
-            //soma d1d3 + d2d4
-            string soma1 = somaDados(dado1, dado3);
-            string soma2 = somaDados(dado2, dado4);
-
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", (soma1 + soma2));
-
-            if (mover != "")
-            {
-                move2OP3();
-            }
-        }
-        public void move2OP3()
-        {
-            //soma d1d4 + d2d3
-            string soma1 = somaDados(dado1, dado4);
-            string soma2 = somaDados(dado2, dado3);
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", (soma1 + soma2));
-
-            if (mover != "")
-            {
-                move1OP1();
-            }
-        }
-        public void move1OP1()
-        {
-            //soma d1 + d4
-            string soma1 = somaDados(dado1, dado4);
-
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", (soma1 + "0"));
-
-            if (mover != "")
-            {
-                move1OP2();
-            }
-        }
-        public void move1OP2()
-        {
-            //soma d1 + d3
-            string soma1 = somaDados(dado1, dado3);
-
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", (soma1 + "0"));
-
-            if (mover != "")
-            {
-                move1OP3();
-            }
-
-        }
-        public void move1OP3()
-        {
-            //soma d2 + d4
-            string soma1 = somaDados(dado2, dado4);
-
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2413", (soma1 + "0"));
-
-            if (mover != "")
-            {
-                move1OP4();
-            }
-        }
-        public void move1OP4()
-        {
-            //soma d1 + d2
-            string soma1 = somaDados(dado1, dado2);
-
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (soma1 + "0"));
-
-            if (mover != "")
-            {
-                move1OP5();
-            }
-        }
-        public void move1OP5()
-        {
-            //soma d3 + d4
-            string soma1 = somaDados(dado3, dado4);
-
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "3412", (soma1 + "0"));
-
-            if (mover != "")
-            {
-                move1OP6();
-            }
-        }
-        public void move1OP6()
-        {
-            //soma d2 + d3
-
-            string soma1 = somaDados(dado2, dado3);
-            string mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2314", (soma1 + "0"));
-
-            if (mover != "")
-            {
-                acabaVez();
-            }
-        }
-        */
         /*
             Timer
         */
@@ -672,17 +564,7 @@ namespace Cant_stop
                 verificadordeTabuleiro();
             }
         }
-        /*void melhorJogada()
-        {
-            if (somaDados(dado1, dado2) == somaDados(dado3, dado4)) { 
-            }else if (somaDados(dado2, dado3) == somaDados(dado1, dado4)) {
-            }else if (somaDados(dado1, dado3) == somaDados(dado2, dado4)) {
-            }
-            else
-            {
 
-            }
-        }*/
         private void timerVerificaVez_Tick(object sender, EventArgs e)
         {
             if (jogoCompleto())
@@ -696,7 +578,7 @@ namespace Cant_stop
 
                 if (NossaVez)
                 {
-                    if (pontos <= 28)
+                    if (pontos <= 36)
                     {
                         rolardados();
                         movimenta2();
@@ -705,14 +587,11 @@ namespace Cant_stop
                     {
                         acabaVez();
                     }
-                    //move2OP1();
-                    //rolardados();
-                    //move2OP1();
-                    //rolardados();
-                    //move2OP1();
+                }
 
-
-
+                if(!NossaVez)
+                {
+                    pontos = 0;
                 }
             }
         }
@@ -806,7 +685,6 @@ namespace Cant_stop
 
         public void carregaTrilhas()
         {
-
             trilhas.Add(new Trilhas("2", 3, 12, 6));
             trilhas.Add(new Trilhas("3", 5, 10, 5));
             trilhas.Add(new Trilhas("4", 7, 8, 4));

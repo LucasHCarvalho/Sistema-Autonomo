@@ -19,7 +19,6 @@ namespace Cant_stop
             this.Tamanho = tamanho;
             this.PontosComAlpinista = pontosComAlpinista;
             this.PontosSemAlpinista = pontosSemAlpinista;
-
         }
 
 
