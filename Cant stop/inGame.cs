@@ -15,15 +15,16 @@ namespace Cant_stop
         public static int dado1, dado2, dado3, dado4;
         public string cor;
         public static int optMovimento;
-        public int Alpinista1 = 0;
-        public int Alpinista2 = 0;
-        public int Alpinista3 = 0;
+        public string Alpinista1 = "N";
+        public string Alpinista2 = "N";
+        public string Alpinista3 = "N";
         public static bool NossaVez = false;
         public string validaBouA;
         public int pontos = 0;
         public int alpinista = 3;
         
         List<Trilhas> trilhas = new List<Trilhas>();
+
         /*
             Funções
         */
@@ -158,18 +159,12 @@ namespace Cant_stop
                     validaBouA = posicoes[3];
                     validaAlpinista(player);
 
-                    if (Alpinista3 == 0)
+                    if(NossaVez)
                     {
-                        Alpinista3 = Convert.ToInt32(posicoes[0]);
+                        contaAlpinista(coluna);
                     }
-                    else if (Alpinista2 == 0)
-                    {
-                        Alpinista2 = Convert.ToInt32(posicoes[0]);
-                    }
-                    else if (Alpinista1 == 0)
-                    {
-                        Alpinista1 = Convert.ToInt32(posicoes[0]);
-                    }
+                    
+                    atualizaTrilhas(player, coluna);
 
                     Console.WriteLine("{0}", linhas[i]);
                     printaImagem(coluna, linha);
@@ -203,7 +198,9 @@ namespace Cant_stop
             string retorno = Jogo.ExibirHistorico(Lobby.IdPartida);
             retorno = retorno.Replace("\r", "");
             string[] linha = retorno.Split('\n');
+
             lstHistorico.Items.Clear();
+
             for (int i = 0; i < linha.Length; i++)
             {
                 if (i <= 36)
@@ -214,7 +211,6 @@ namespace Cant_stop
         /*
             Movimentos
         */
-
         public string move2OP1()
         {
             //somad1d2 + d3d4
@@ -285,8 +281,10 @@ namespace Cant_stop
 
             return soma1;
         }
+
         public void movimenta2()
         {
+            Console.WriteLine(2000000);
             string opcao1 = move2OP1();
             string opcao2 = move2OP2();
             string opcao3 = move2OP3();
@@ -297,65 +295,62 @@ namespace Cant_stop
             {
                 if (trilha.Id == opcao1.Substring(0, 1))
                 {
-                    pontos1 += trilha.PontosSemAlpinista;
+                    pontos1 += trilha.Pontostrilha;
                 }
 
                 if (trilha.Id == opcao1.Substring(1, 1))
                 {
-                    pontos1 += trilha.PontosSemAlpinista;
+                    pontos1 += trilha.Pontostrilha;
                 }
 
                 if (trilha.Id == opcao2.Substring(0, 1))
                 {
-                    pontos2 += trilha.PontosSemAlpinista;
+                    pontos2 += trilha.Pontostrilha;
                 }
 
                 if (trilha.Id == opcao2.Substring(1, 1))
                 {
-                    pontos2 += trilha.PontosSemAlpinista;
+                    pontos2 += trilha.Pontostrilha;
                 }
 
                 if (trilha.Id == opcao3.Substring(0, 1))
                 {
-                    pontos3 += trilha.PontosSemAlpinista;
+                    pontos3 += trilha.Pontostrilha;
                 }
 
                 if (trilha.Id == opcao3.Substring(1, 1))
                 {
-                    pontos3 += trilha.PontosSemAlpinista;
+                    pontos3 += trilha.Pontostrilha;
                 }
-
             }
 
             if (pontos1 >= pontos2 && pontos1 >= pontos3)
             {
-                pontos += pontos1;
+                pontos += contarPontos(opcao1.Substring(0, 1));
+                pontos += contarPontos(opcao1.Substring(1, 1));
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", opcao1);
-
             }
 
             else if (pontos2 >= pontos1 && pontos2 >= pontos3)
             {
-                pontos += pontos2;
+                pontos += contarPontos(opcao2.Substring(0, 1));
+                pontos += contarPontos(opcao2.Substring(1, 1));
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", opcao2);
-
             }
 
             else
             {
-                pontos += pontos3;
+                pontos += contarPontos(opcao3.Substring(0, 1));
+                pontos += contarPontos(opcao3.Substring(1, 1));
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", opcao3);
-
             }
 
             if (mover != "")
             {
-
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", opcao1);
 
                 if (mover != "")
                 {
-
                     mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", opcao2);
 
                     if (mover != "")
@@ -369,29 +364,23 @@ namespace Cant_stop
                         else
                         {
                             pontos += pontos3;
-
-
                         }
-
                     }
                     else
                     {
                         pontos += pontos2;
-
                     }
                 }
                 else
                 {
                     pontos += pontos1;
-
                 }
                 Console.WriteLine(mover);
             }
         }
-
         public void movimenta1()
         {
-            alpinista -= 1;
+            Console.WriteLine(100000000000);
             string opcao1 = move1OP1();
             string opcao2 = move1OP2();
             string opcao3 = move1OP3();
@@ -405,70 +394,71 @@ namespace Cant_stop
             {
                 if (trilha.Id == opcao1)
                 {
-                    pontos1 += trilha.PontosSemAlpinista;
+                    pontos1 += trilha.Pontostrilha;
                 }
 
                 if (trilha.Id == opcao2)
                 {
-                    pontos2 += trilha.PontosSemAlpinista;
+                    pontos2 += trilha.Pontostrilha;
                 }
 
                 if (trilha.Id == opcao3)
                 {
-                    pontos3 += trilha.PontosSemAlpinista;
+                    pontos3 += trilha.Pontostrilha;
                 }
 
                 if (trilha.Id == opcao4)
                 {
-                    pontos4 += trilha.PontosSemAlpinista;
+                    pontos4 += trilha.Pontostrilha;
                 }
 
                 if (trilha.Id == opcao5)
                 {
-                    pontos5 += trilha.PontosSemAlpinista;
+                    pontos5 += trilha.Pontostrilha;
                 }
 
                 if (trilha.Id == opcao6)
                 {
-                    pontos6 += trilha.PontosSemAlpinista;
+                    pontos6 += trilha.Pontostrilha;
                 }
             }
 
 
+
             if (pontos1 >= pontos2 && pontos1 >= pontos3 && pontos1 >= pontos4 && pontos1 >= pontos5 && pontos1 >= pontos6)
             {
-                pontos += pontos1;
+                pontos += contarPontos(opcao1);
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", (opcao1 + "0"));
             }
 
             else if (pontos2 >= pontos1 && pontos2 >= pontos3 && pontos2 >= pontos4 && pontos2 >= pontos5 && pontos2 >= pontos6)
             {
-                pontos += pontos2;
+                pontos += contarPontos(opcao2);
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", (opcao2 + "0"));
             }
 
             else if (pontos3 >= pontos1 && pontos3 >= pontos2 && pontos3 >= pontos4 && pontos3 >= pontos5 && pontos3 >= pontos6)
             {
-                pontos += pontos3;
+                pontos += contarPontos(opcao3);
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2413", (opcao3 + "0"));
 
             }
 
             else if (pontos4 >= pontos1 && pontos4 >= pontos2 && pontos4 >= pontos3 && pontos4 >= pontos5 && pontos4 >= pontos6)
             {
-                pontos += pontos4;
+                pontos += contarPontos(opcao4);
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (opcao4 + "0"));
             }
 
             else if (pontos5 >= pontos1 && pontos5 >= pontos2 && pontos5 >= pontos3 && pontos5 >= pontos4 && pontos5 >= pontos6)
             {
-                pontos += pontos5;
+                pontos += contarPontos(opcao5);
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "3412", (opcao5 + "0"));
             }
 
             else
             {
-                pontos += pontos6;
+                pontos += contarPontos(opcao6);
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2314", (opcao6 + "0"));
             }
 
@@ -510,7 +500,7 @@ namespace Cant_stop
                             }
                             else
                             {
-                                pontos += pontos4;
+                                pontos += contarPontos(opcao6);
                             }
                         }
                         else
@@ -534,21 +524,141 @@ namespace Cant_stop
 
         public void movimentaAlpinista()
         {
+            if (alpinista == 3)
+            {
+                movimenta2();
+            }
+            else
+            {
+                movimenta1Alpinista();
+            }                
+        }
 
+        public void movimenta1Alpinista()
+        {
+            string movimento;
+            string mover = "N";
+            movimento = move1OP1();
+
+            if (Alpinista3 == movimento || Alpinista2 == movimento)
+            {
+                mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", (movimento + "0"));
+                pontos += contarPontos(movimento);
+                Console.WriteLine(1);
+            }
+            else
+            {
+                movimento = move1OP2();
+                if (Alpinista3 == movimento || Alpinista2 == movimento)
+                {
+                    mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", (movimento + "0"));
+                    pontos += contarPontos(movimento);
+                    Console.WriteLine(2);
+                }
+                else
+                {
+                    movimento = move1OP3();
+                    if (Alpinista3 == movimento || Alpinista2 == movimento)
+                    {
+                        mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2413", (movimento + "0"));
+                        pontos += contarPontos(movimento);
+                        Console.WriteLine(3);
+                    }
+                    else
+                    {
+                        movimento = move1OP4();
+                        if (Alpinista3 == movimento || Alpinista2 == movimento)
+                        {
+                            mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (movimento + "0"));
+                            pontos += contarPontos(movimento);
+                            Console.WriteLine(4);
+                        }
+                        else
+                        {
+                            movimento = move1OP5();
+                            if (Alpinista3 == movimento || Alpinista2 == movimento)
+                            {
+                                mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "3412", (movimento + "0"));
+                                pontos += contarPontos(movimento);
+                                Console.WriteLine(5);
+                            }
+                            else
+                            {
+                                movimento = move1OP6();
+                                if (Alpinista3 == movimento || Alpinista2 == movimento)
+                                {
+                                    mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2314", (movimento + "0"));
+                                    pontos += contarPontos(movimento);
+                                    Console.WriteLine(6);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (mover == "N")
+                movimenta2Alpinistas(); 
+            if(mover != "")
+                if(mover.Substring(0, 1) == "E")
+                    movimenta2Alpinistas();
+        }
+        public void movimenta2Alpinistas()
+        {
+            string movimento1, movimento2, movimento;
+            string mover = "N";
+            movimento = move2OP1();
+            movimento1 = move2OP1().Substring(0,1);
+            movimento2 = move2OP1().Substring(1,1);
+
+            if (Alpinista3 == movimento1 && Alpinista2 == movimento2 || Alpinista3 == movimento2 || Alpinista2 == movimento1)
+            {
+                mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", movimento);
+            }
+            else
+            {
+                movimento = move2OP2();
+                movimento1 = move2OP2().Substring(0, 1);
+                movimento2 = move2OP2().Substring(1, 1);
+                if (Alpinista3 == movimento1 && Alpinista2 == movimento2 || Alpinista3 == movimento2 || Alpinista2 == movimento1)
+                {
+                    mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", movimento);
+                }
+                else
+                {
+                    movimento = move2OP3();
+                    movimento1 = move2OP3().Substring(0, 1);
+                    movimento2 = move2OP3().Substring(1, 1);
+                    if (Alpinista3 == movimento1 && Alpinista2 == movimento2 || Alpinista3 == movimento2 || Alpinista2 == movimento1)
+                    {
+                        mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", movimento);
+                    }
+                }
+            }
+
+            if (mover == "N")
+            {
+                movimenta2();
+            }
+            else
+            {
+                pontos += 4;
+                Console.WriteLine(4);
+            }
         }
 
         /*
             Timer
         */
         private void timer1_Tick(object sender, EventArgs e)
-        {
-
-            if (jogoCompleto() == false)
+        { 
+            if (!jogoCompleto())
             {
                 historicopartida();
             }
             else
             {
+                historicopartida();
                 timerHistorico.Enabled = false;
             }
         }
@@ -564,7 +674,6 @@ namespace Cant_stop
                 verificadordeTabuleiro();
             }
         }
-
         private void timerVerificaVez_Tick(object sender, EventArgs e)
         {
             if (jogoCompleto())
@@ -578,18 +687,28 @@ namespace Cant_stop
 
                 if (NossaVez)
                 {
-                    if (pontos <= 36)
+                    timerTabuleiro.Enabled = false;
+                    if(alpinista != 0)
                     {
                         rolardados();
-                        movimenta2();
+                        movimentaAlpinista();
+                        verificadordeTabuleiro();
+                    }
+                    else if (pontos <= 36)
+                    {
+                        rolardados();
+                        movimentaAlpinista();
+                        verificadordeTabuleiro();
                     }
                     else
                     {
                         acabaVez();
+                        timerTabuleiro.Enabled = true;
+                        alpinista = 3;
                     }
                 }
 
-                if(!NossaVez)
+                if (!NossaVez)
                 {
                     pontos = 0;
                 }
@@ -627,12 +746,6 @@ namespace Cant_stop
             pictureBox.BackgroundImage = new Bitmap(@"..\..\Imagens\jogador" + cor + ".png");
             pictureBox.BackgroundImageLayout = ImageLayout.Stretch;
         }
-
-        private void lstHistorico_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         public void validaAlpinista(string player)
         {
             if (int.Parse(player) == int.Parse(Lobby.jogadorVermelho))
@@ -651,6 +764,7 @@ namespace Cant_stop
             {
                 cor = "amarelo" + validaBouA;
             }
+
         }
         public string somaDados(int dado1, int dado2)
         {
@@ -682,7 +796,6 @@ namespace Cant_stop
                 dado4 = Convert.ToInt32(dadosGlobal.Substring(7, 1));
             }
         }
-
         public void carregaTrilhas()
         {
             trilhas.Add(new Trilhas("2", 3, 12, 6));
@@ -696,6 +809,58 @@ namespace Cant_stop
             trilhas.Add(new Trilhas("A", 7, 8, 4));
             trilhas.Add(new Trilhas("B", 5, 10, 5));
             trilhas.Add(new Trilhas("C", 3, 12, 6));
+        }
+        public void contaAlpinista(int coluna)
+        {
+            if (validaBouA == "A")
+            {
+                if (alpinista == 3)
+                {
+                    Alpinista3 = somaDados(coluna, 2);
+                    alpinista -= 1;
+                }
+                else if (alpinista == 2)
+                {
+                    Alpinista2 = somaDados(coluna, 2);
+                    alpinista -= 1;
+                }
+                else if (alpinista == 1)
+                {
+                    Alpinista1 = somaDados(coluna, 2);
+                    alpinista -= 1;
+                }
+                Console.WriteLine(alpinista);
+            }
+        }
+        public void atualizaTrilhas(string id, int coluna)
+        {
+            string posicao = somaDados(coluna, 2);
+            if(int.Parse(id) == Lobby.IdJogador)
+            {
+                //onde achei minha base tenho que retirar 1 de tamanho e atualizar o valor de pontos de movimento naquela trilha.
+                foreach (Trilhas trilha in trilhas)
+                { 
+                    if(trilha.Id == posicao)
+                    {
+                        trilha.Tamanho -= 1;
+                        trilha.Pontostrilha = 13 - trilha.Tamanho;
+                    }
+                }
+            }
+        }
+        public int contarPontos(string id)
+        {
+            int pontosTrilha = 0;
+
+            foreach (Trilhas trilha in trilhas)
+            {
+                if (trilha.Id == id)
+                {
+                    pontosTrilha = trilha.PontosSemAlpinista;
+                }
+            }
+
+            return pontosTrilha;
         }
     }
 

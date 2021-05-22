@@ -1254,7 +1254,6 @@ namespace Cant_stop
             this.lstHistorico.Name = "lstHistorico";
             this.lstHistorico.Size = new System.Drawing.Size(428, 555);
             this.lstHistorico.TabIndex = 161;
-            this.lstHistorico.SelectedIndexChanged += new System.EventHandler(this.lstHistorico_SelectedIndexChanged);
             // 
             // timerHistorico
             // 

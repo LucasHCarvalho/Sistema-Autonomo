@@ -11,6 +11,7 @@ namespace Cant_stop
         public int Tamanho { get; set; }
         public int PontosComAlpinista { get; set; }
         public int PontosSemAlpinista { get; set; }
+        public int Pontostrilha { get; set; }
         public string Id;
 
         public Trilhas(string id, int tamanho, int pontosSemAlpinista, int pontosComAlpinista)
@@ -19,6 +20,7 @@ namespace Cant_stop
             this.Tamanho = tamanho;
             this.PontosComAlpinista = pontosComAlpinista;
             this.PontosSemAlpinista = pontosSemAlpinista;
+            this.Pontostrilha = 13 - tamanho;
         }
 
 

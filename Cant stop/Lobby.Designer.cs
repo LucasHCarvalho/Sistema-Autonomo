@@ -55,7 +55,7 @@ namespace Cant_stop
             this.lblAmarelo = new System.Windows.Forms.Label();
             this.lblVerde = new System.Windows.Forms.Label();
             this.lblAzul = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstListarJogadores = new System.Windows.Forms.ListBox();
             btnAtualizaJogador = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcVermelho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcAzul)).BeginInit();
@@ -100,7 +100,7 @@ namespace Cant_stop
             this.btnEntrar.Font = new System.Drawing.Font("Arial", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.btnEntrar.Location = new System.Drawing.Point(364, 214);
-            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEntrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(112, 81);
             this.btnEntrar.TabIndex = 3;
@@ -116,7 +116,7 @@ namespace Cant_stop
             this.btnCriar.Font = new System.Drawing.Font("Arial", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCriar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.btnCriar.Location = new System.Drawing.Point(484, 214);
-            this.btnCriar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCriar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCriar.Name = "btnCriar";
             this.btnCriar.Size = new System.Drawing.Size(112, 81);
             this.btnCriar.TabIndex = 4;
@@ -129,11 +129,10 @@ namespace Cant_stop
             this.txtCriarPartida.Font = new System.Drawing.Font("Arial", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCriarPartida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.txtCriarPartida.Location = new System.Drawing.Point(364, 72);
-            this.txtCriarPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCriarPartida.Margin = new System.Windows.Forms.Padding(2);
             this.txtCriarPartida.Name = "txtCriarPartida";
             this.txtCriarPartida.Size = new System.Drawing.Size(234, 24);
             this.txtCriarPartida.TabIndex = 6;
-            this.txtCriarPartida.TextChanged += new System.EventHandler(this.txtCriarPartida_TextChanged);
             // 
             // lblCriarPartida
             // 
@@ -147,7 +146,6 @@ namespace Cant_stop
             this.lblCriarPartida.Size = new System.Drawing.Size(180, 17);
             this.lblCriarPartida.TabIndex = 7;
             this.lblCriarPartida.Text = "Digite o nome da partida";
-            this.lblCriarPartida.Click += new System.EventHandler(this.lblCriarPartida_Click);
             // 
             // lblNomeJogador
             // 
@@ -161,18 +159,16 @@ namespace Cant_stop
             this.lblNomeJogador.Size = new System.Drawing.Size(122, 17);
             this.lblNomeJogador.TabIndex = 10;
             this.lblNomeJogador.Text = "Digite seu nome";
-            this.lblNomeJogador.Click += new System.EventHandler(this.lblNomeJogador_Click);
             // 
             // txtNomeJogador
             // 
             this.txtNomeJogador.Font = new System.Drawing.Font("Arial", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeJogador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.txtNomeJogador.Location = new System.Drawing.Point(367, 116);
-            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomeJogador.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomeJogador.Name = "txtNomeJogador";
             this.txtNomeJogador.Size = new System.Drawing.Size(230, 24);
             this.txtNomeJogador.TabIndex = 11;
-            this.txtNomeJogador.TextChanged += new System.EventHandler(this.txtNomeJogador_TextChanged);
             // 
             // lblSenhaPartida
             // 
@@ -186,18 +182,16 @@ namespace Cant_stop
             this.lblSenhaPartida.Size = new System.Drawing.Size(181, 17);
             this.lblSenhaPartida.TabIndex = 12;
             this.lblSenhaPartida.Text = "Digite a senha da partida";
-            this.lblSenhaPartida.Click += new System.EventHandler(this.lblSenhaPartida_Click);
             // 
             // txtSenhaPartida
             // 
             this.txtSenhaPartida.Font = new System.Drawing.Font("Arial", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenhaPartida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.txtSenhaPartida.Location = new System.Drawing.Point(367, 176);
-            this.txtSenhaPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSenhaPartida.Margin = new System.Windows.Forms.Padding(2);
             this.txtSenhaPartida.Name = "txtSenhaPartida";
             this.txtSenhaPartida.Size = new System.Drawing.Size(230, 24);
             this.txtSenhaPartida.TabIndex = 13;
-            this.txtSenhaPartida.TextChanged += new System.EventHandler(this.txtSenhaPartida_TextChanged);
             // 
             // lstListaJogadores
             // 
@@ -208,11 +202,10 @@ namespace Cant_stop
             this.lstListaJogadores.FormattingEnabled = true;
             this.lstListaJogadores.ItemHeight = 20;
             this.lstListaJogadores.Location = new System.Drawing.Point(364, 13);
-            this.lstListaJogadores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstListaJogadores.Margin = new System.Windows.Forms.Padding(2);
             this.lstListaJogadores.Name = "lstListaJogadores";
             this.lstListaJogadores.Size = new System.Drawing.Size(241, 20);
             this.lstListaJogadores.TabIndex = 14;
-            this.lstListaJogadores.SelectedIndexChanged += new System.EventHandler(this.lstListaJogadores_SelectedIndexChanged);
             // 
             // lblVersao
             // 
@@ -226,7 +219,6 @@ namespace Cant_stop
             this.lblVersao.Size = new System.Drawing.Size(56, 17);
             this.lblVersao.TabIndex = 15;
             this.lblVersao.Text = "Versão\r\n";
-            this.lblVersao.Click += new System.EventHandler(this.lblVersao_Click);
             // 
             // lblTratativaErro
             // 
@@ -239,7 +231,6 @@ namespace Cant_stop
             this.lblTratativaErro.Name = "lblTratativaErro";
             this.lblTratativaErro.Size = new System.Drawing.Size(0, 17);
             this.lblTratativaErro.TabIndex = 18;
-            this.lblTratativaErro.Click += new System.EventHandler(this.lblTratativaErro_Click);
             // 
             // label1
             // 
@@ -253,7 +244,6 @@ namespace Cant_stop
             this.label1.Size = new System.Drawing.Size(82, 17);
             this.label1.TabIndex = 20;
             this.label1.Text = "Jogadores";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -267,7 +257,6 @@ namespace Cant_stop
             this.label2.Size = new System.Drawing.Size(66, 17);
             this.label2.TabIndex = 21;
             this.label2.Text = "Partidas";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnIniciarPartida
             // 
@@ -277,7 +266,7 @@ namespace Cant_stop
             this.btnIniciarPartida.Font = new System.Drawing.Font("Arial", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarPartida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(0)))));
             this.btnIniciarPartida.Location = new System.Drawing.Point(426, 298);
-            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIniciarPartida.Margin = new System.Windows.Forms.Padding(2);
             this.btnIniciarPartida.Name = "btnIniciarPartida";
             this.btnIniciarPartida.Size = new System.Drawing.Size(112, 81);
             this.btnIniciarPartida.TabIndex = 17;
@@ -308,13 +297,12 @@ namespace Cant_stop
             this.pcVermelho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcVermelho.Cursor = System.Windows.Forms.Cursors.Default;
             this.pcVermelho.Location = new System.Drawing.Point(712, 44);
-            this.pcVermelho.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pcVermelho.Margin = new System.Windows.Forms.Padding(2);
             this.pcVermelho.Name = "pcVermelho";
             this.pcVermelho.Size = new System.Drawing.Size(68, 71);
             this.pcVermelho.TabIndex = 26;
             this.pcVermelho.TabStop = false;
             this.pcVermelho.Visible = false;
-            this.pcVermelho.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pcAzul
             // 
@@ -323,13 +311,12 @@ namespace Cant_stop
             this.pcAzul.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcAzul.Cursor = System.Windows.Forms.Cursors.Default;
             this.pcAzul.Location = new System.Drawing.Point(712, 151);
-            this.pcAzul.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pcAzul.Margin = new System.Windows.Forms.Padding(2);
             this.pcAzul.Name = "pcAzul";
             this.pcAzul.Size = new System.Drawing.Size(68, 71);
             this.pcAzul.TabIndex = 29;
             this.pcAzul.TabStop = false;
             this.pcAzul.Visible = false;
-            this.pcAzul.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pcAmarelo
             // 
@@ -338,13 +325,12 @@ namespace Cant_stop
             this.pcAmarelo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcAmarelo.Cursor = System.Windows.Forms.Cursors.Default;
             this.pcAmarelo.Location = new System.Drawing.Point(712, 369);
-            this.pcAmarelo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pcAmarelo.Margin = new System.Windows.Forms.Padding(2);
             this.pcAmarelo.Name = "pcAmarelo";
             this.pcAmarelo.Size = new System.Drawing.Size(68, 71);
             this.pcAmarelo.TabIndex = 27;
             this.pcAmarelo.TabStop = false;
             this.pcAmarelo.Visible = false;
-            this.pcAmarelo.Click += new System.EventHandler(this.pcAmarelo_Click);
             // 
             // pcVerde
             // 
@@ -353,14 +339,13 @@ namespace Cant_stop
             this.pcVerde.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pcVerde.Cursor = System.Windows.Forms.Cursors.Default;
             this.pcVerde.Location = new System.Drawing.Point(712, 258);
-            this.pcVerde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pcVerde.Margin = new System.Windows.Forms.Padding(2);
             this.pcVerde.Name = "pcVerde";
             this.pcVerde.Size = new System.Drawing.Size(68, 71);
             this.pcVerde.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcVerde.TabIndex = 28;
             this.pcVerde.TabStop = false;
             this.pcVerde.Visible = false;
-            this.pcVerde.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // lblVermelho
             // 
@@ -410,21 +395,20 @@ namespace Cant_stop
             this.lblAzul.Size = new System.Drawing.Size(0, 20);
             this.lblAzul.TabIndex = 33;
             // 
-            // listBox1
+            // lstListarJogadores
             // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(190)))), ((int)(((byte)(124)))));
-            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.Color.IndianRed;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(671, 488);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(241, 20);
-            this.listBox1.TabIndex = 14;
-            this.listBox1.Visible = false;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.lstListaJogadores_SelectedIndexChanged);
+            this.lstListarJogadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(190)))), ((int)(((byte)(124)))));
+            this.lstListarJogadores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstListarJogadores.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstListarJogadores.ForeColor = System.Drawing.Color.IndianRed;
+            this.lstListarJogadores.FormattingEnabled = true;
+            this.lstListarJogadores.ItemHeight = 20;
+            this.lstListarJogadores.Location = new System.Drawing.Point(671, 488);
+            this.lstListarJogadores.Margin = new System.Windows.Forms.Padding(2);
+            this.lstListarJogadores.Name = "lstListarJogadores";
+            this.lstListarJogadores.Size = new System.Drawing.Size(241, 20);
+            this.lstListarJogadores.TabIndex = 14;
+            this.lstListarJogadores.Visible = false;
             // 
             // Lobby
             // 
@@ -448,7 +432,7 @@ namespace Cant_stop
             this.Controls.Add(this.lblTratativaErro);
             this.Controls.Add(this.btnIniciarPartida);
             this.Controls.Add(this.lblVersao);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstListarJogadores);
             this.Controls.Add(this.lstListaJogadores);
             this.Controls.Add(this.txtSenhaPartida);
             this.Controls.Add(this.lblSenhaPartida);
@@ -463,8 +447,7 @@ namespace Cant_stop
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.IndianRed;
             this.Name = "Lobby";
-            this.Text = "xx";
-            this.Load += new System.EventHandler(this.Lobby_Load);
+            this.Text = "Lobby";
             ((System.ComponentModel.ISupportInitialize)(this.pcVermelho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcAzul)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcAmarelo)).EndInit();
@@ -500,7 +483,7 @@ namespace Cant_stop
         private System.Windows.Forms.Label lblAmarelo;
         private System.Windows.Forms.Label lblVerde;
         private System.Windows.Forms.Label lblAzul;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstListarJogadores;
     }
 }
 
