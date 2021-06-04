@@ -446,6 +446,7 @@ namespace Cant_stop
             this.Controls.Add(this.btnMostraLista);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.IndianRed;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lobby";
             this.Text = "Lobby";
             ((System.ComponentModel.ISupportInitialize)(this.pcVermelho)).EndInit();
