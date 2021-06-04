@@ -12,16 +12,12 @@ namespace Cant_stop
             Variaveis
         */
         public string dadosGlobal;
-        public static int dado1, dado2, dado3, dado4;
+        public int dado1, dado2, dado3, dado4;
         public string cor;
-        public static int optMovimento;
-        public string Alpinista1 = "N";
-        public string Alpinista2 = "N";
-        public string Alpinista3 = "N";
-        public static bool NossaVez = false;
+        public string Alpinista1 = "N", Alpinista2 = "N", Alpinista3 = "N";
+        public bool NossaVez = false;
         public string validaBouA;
-        public int pontos = 0;
-        public int alpinista = 3;
+        public int pontos = 0, alpinista = 3, trilhasDominadas = 0, trilhasConquistadas = 0;
 
         List<Trilhas> trilhas = new List<Trilhas>();
 
@@ -42,19 +38,19 @@ namespace Cant_stop
         */
         public bool jogoCompleto()
         {
+            //Verifica se o jogo já está completo e retorna a resposta.
+
             string retorno = Jogo.ListarPartidas("E");
             retorno = retorno.Replace("\r", "");
             string[] linha = retorno.Split('\n');
+
+            //Lista partidas, se alguma partida finalizada for a nossa, ele retorna jogo completo.
             for (int i = 0; i < linha.Length - 1; i++)
             {
                 string[] partidaide = linha[i].Split(',');
                 if (Convert.ToInt32(partidaide[0]) == Lobby.IdPartida)
-                {
-                    Console.WriteLine("Jogo Completo!");
                     return true;
-                }
             }
-            Console.WriteLine("Jogo Incompleto");
             return false;
         }
 
@@ -67,90 +63,100 @@ namespace Cant_stop
             string lista = verificaVez.ToString();
             string[] itens = lista.Split(',');
 
-            if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorVermelho))
-            {
-                lblCor.ForeColor = System.Drawing.Color.Red;
-                lstHistorico.ForeColor = Color.Red;
-                if (Lobby.nossoJogador == Lobby.nomeJVermelho)
-                {
+            //Verifica de quem é a vez, mudando o texto de quem for a vez, e as cores das letras.
+            //Caso seja a vez do nosso jogador retorna Nossa vez.
 
-                    lblCor.Text = "É a sua vez!";
-                    NossaVez = true;
-                }
-                else
-                {
-                    lblCor.Text = "É a vez do " + Lobby.nomeJVermelho + " de cor vermelha";
-                    NossaVez = false;
-                }
-            }
-            if (Lobby.jogadorAzul != null)
+            //Verifica se existe o jogador, caso sim verifica a cor.
+            if(lista.Substring(0,4) != "ERRO")
             {
-                if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorAzul))
+                if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorVermelho))
                 {
-                    lstHistorico.ForeColor = Color.Blue;
-                    lblCor.ForeColor = System.Drawing.Color.Blue;
-                    if (Lobby.nossoJogador == Lobby.nomeJAzul)
+                    lstHistorico.ForeColor = Color.Red;
+                    lblCor.ForeColor = System.Drawing.Color.Red;
+                    if (Lobby.nossoJogador == Lobby.nomeJVermelho)
                     {
                         lblCor.Text = "É a sua vez!";
                         NossaVez = true;
                     }
                     else
                     {
-                        lblCor.Text = "É a vez do " + Lobby.nomeJAzul + " de cor azul";
+                        lblCor.Text = "É a vez do " + Lobby.nomeJVermelho + " de cor vermelha";
                         NossaVez = false;
                     }
                 }
-            }
-            if (Lobby.jogadorVerde != null)
-            {
-                if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorVerde))
+                if (Lobby.jogadorAzul != null)
                 {
-                    lstHistorico.ForeColor = Color.YellowGreen;
-                    lblCor.ForeColor = System.Drawing.Color.YellowGreen;
-                    if (Lobby.nossoJogador == Lobby.nomeJVerde)
+                    if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorAzul))
                     {
-                        lblCor.Text = "É a sua vez!";
-                        NossaVez = true;
-                    }
-                    else
-                    {
-                        lblCor.Text = "É a vez do " + Lobby.nomeJVerde + " de cor verde";
-                        NossaVez = false;
+                        lstHistorico.ForeColor = Color.Blue;
+                        lblCor.ForeColor = System.Drawing.Color.Blue;
+                        if (Lobby.nossoJogador == Lobby.nomeJAzul)
+                        {
+                            lblCor.Text = "É a sua vez!";
+                            NossaVez = true;
+                        }
+                        else
+                        {
+                            lblCor.Text = "É a vez do " + Lobby.nomeJAzul + " de cor azul";
+                            NossaVez = false;
+                        }
                     }
                 }
-            }
-            if (Lobby.jogadorAmarelo != null)
-            {
-                if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorAmarelo))
+                if (Lobby.jogadorVerde != null)
                 {
-                    lstHistorico.ForeColor = Color.Orange;
-                    lblCor.ForeColor = System.Drawing.Color.Orange;
-                    if (Lobby.nossoJogador == Lobby.nomeJAmarelo)
+                    if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorVerde))
                     {
-                        lblCor.Text = "É a sua vez!";
-                        NossaVez = true;
+                        lstHistorico.ForeColor = Color.YellowGreen;
+                        lblCor.ForeColor = System.Drawing.Color.YellowGreen;
+                        if (Lobby.nossoJogador == Lobby.nomeJVerde)
+                        {
+                            lblCor.Text = "É a sua vez!";
+                            NossaVez = true;
+                        }
+                        else
+                        {
+                            lblCor.Text = "É a vez do " + Lobby.nomeJVerde + " de cor verde";
+                            NossaVez = false;
+                        }
                     }
-                    else
-                    {
-                        lblCor.Text = "É a vez do " + Lobby.nomeJAmarelo + " de cor amarela";
-                        NossaVez = false;
-                    }
-
                 }
-            }
+                if (Lobby.jogadorAmarelo != null)
+                {
+                    if (int.Parse(itens[1]) == int.Parse(Lobby.jogadorAmarelo))
+                    {
+                        lstHistorico.ForeColor = Color.Orange;
+                        lblCor.ForeColor = System.Drawing.Color.Orange;
+                        if (Lobby.nossoJogador == Lobby.nomeJAmarelo)
+                        {
+                            lblCor.Text = "É a sua vez!";
+                            NossaVez = true;
+                        }
+                        else
+                        {
+                            lblCor.Text = "É a vez do " + Lobby.nomeJAmarelo + " de cor amarela";
+                            NossaVez = false;
+                        }
+                    }
+                }
+            }            
         }
         private void verificadordeTabuleiro()
         {
+            //Atualiza os movimentos, limpando a tela e adicionando novamente a posição atual.
             limpaTela();
 
             string verificaTabuleiro = Jogo.ExibirTabuleiro(Lobby.IdPartida);
             verificaTabuleiro = verificaTabuleiro.Replace("\r", "");
             string[] linhas = verificaTabuleiro.Split('\n');
+            alpinista = 3;
+            trilhasDominadas = 0;
+            trilhasConquistadas = 0;
 
             for (int i = 0; i < linhas.Length; i++)
             {
                 if (linhas[i] != "")
                 {
+                    //Guarda os dados de cada linha do retorno do tabuleiro.
                     string[] posicoes = linhas[i].Split(',');
 
                     int coluna = Convert.ToInt32(posicoes[0]) - 2;
@@ -159,42 +165,47 @@ namespace Cant_stop
                     validaBouA = posicoes[3];
                     validaAlpinista(player);
 
-                    if(NossaVez)
+                    if (NossaVez)
                     {
+                        //Atualiza os alpinistas e as trilhas.
                         contaAlpinista(coluna);
-                        atualizaTrilhas(player, coluna, Convert.ToInt32(posicoes[1]));
-                    }
-                    
+                        atualizaTrilhas(player, coluna, Convert.ToInt32(posicoes[1]), validaBouA);
+                    }                   
 
-                    Console.WriteLine("{0}", linhas[i]);
+                    //Desenha na tela os jogadores.
                     printaImagem(coluna, linha);
                 }
             }
         }
         public void limpaTela()
         {
+            //Apaga tudo o que foi posicionado nos painéis do Grid.
             for (int i = 0; i <= 12; i++)
             {
                 for (int j = 0; j <= 10; j++)
                 {
                     Control posicao = tableLayoutPanel1.GetControlFromPosition(j, i);
                     if (posicao != null)
-                    {
                         posicao.Controls.Clear();
-                    }
                 }
             }
         }
         public void acabaVez()
         {
+            //Volta os valores dos pontos e finaliza a jogada.
+
             pontos = 0;
             alpinista = 3;
+            trilhasDominadas = 0;
+            trilhasConquistadas = 0;
             NossaVez = false;
             string paraTabuleiro = Jogo.Parar(Lobby.IdJogador, Lobby.senhaJogador);
-            Console.WriteLine(paraTabuleiro);
+            //Console.WriteLine(paraTabuleiro);
         }
         public void historicopartida()
         {
+            //Demonstra o histórico da partida, com os ultimos 36 acontecimentos(tamanho da tela).
+
             string retorno = Jogo.ExibirHistorico(Lobby.IdPartida);
             retorno = retorno.Replace("\r", "");
             string[] linha = retorno.Split('\n');
@@ -211,9 +222,10 @@ namespace Cant_stop
         /*
             Movimentos
         */
+        //Movimentos de 2 alpinistas.
         public string move2OP1()
         {
-            //somad1d2 + d3d4
+            //Soma: D1D2 + D3D4
             string soma1 = somaDados(dado1, dado2);
             string soma2 = somaDados(dado3, dado4);
             string trilhas = (soma1 + soma2);
@@ -222,7 +234,7 @@ namespace Cant_stop
         }
         public string move2OP2()
         {
-            //soma d1d3 + d2d4
+            //Soma: D1D3 + D2D4
             string soma1 = somaDados(dado1, dado3);
             string soma2 = somaDados(dado2, dado4);
             string trilhas = (soma1 + soma2);
@@ -231,7 +243,7 @@ namespace Cant_stop
         }
         public string move2OP3()
         {
-            //soma d1d4 + d2d3
+            //Soma: D1D4 + D2D3
             string soma1 = somaDados(dado1, dado4);
             string soma2 = somaDados(dado2, dado3);
             string trilhas = (soma1 + soma2);
@@ -239,51 +251,54 @@ namespace Cant_stop
             return trilhas;
         }
 
+        //Movimentos de 1 alpinista.
         public string move1OP1()
         {
-            //soma d1 + d4
+            //Dados: D1D4
             string soma1 = somaDados(dado1, dado4);
 
             return soma1;
         }
         public string move1OP2()
         {
-            //soma d1 + d3
+            //Dados: D1D3
             string soma1 = somaDados(dado1, dado3);
 
             return soma1;
         }
         public string move1OP3()
         {
-            //soma d2 + d4
+            //Dados: D2D4
             string soma1 = somaDados(dado2, dado4);
 
             return soma1;
         }
         public string move1OP4()
         {
-            //soma d1 + d2
+            //Dados: D1D2
             string soma1 = somaDados(dado1, dado2);
 
             return soma1;
         }
         public string move1OP5()
         {
-            //soma d3 + d4
+            //Dados: D3D4
             string soma1 = somaDados(dado3, dado4);
 
             return soma1;
         }
         public string move1OP6()
         {
-            //soma d2 + d3
+            //Dados: D2D3
             string soma1 = somaDados(dado2, dado3);
 
             return soma1;
         }
 
+        //Movimenta novos alpinistas.
         public void movimenta2()
         {
+            //Seleciona os movimentos possiveis e conta o valor de cada movimento, de acordo com o ponto.
             string opcao1 = move2OP1();
             string opcao2 = move2OP2();
             string opcao3 = move2OP3();
@@ -293,40 +308,28 @@ namespace Cant_stop
             foreach (Trilhas trilha in trilhas)
             {
                 if (trilha.Id == opcao1.Substring(0, 1))
-                {
                     pontos1 += trilha.Pontostrilha;
-                }
 
                 if (trilha.Id == opcao1.Substring(1, 1))
-                {
                     pontos1 += trilha.Pontostrilha;
-                }
 
                 if (trilha.Id == opcao2.Substring(0, 1))
-                {
                     pontos2 += trilha.Pontostrilha;
-                }
 
                 if (trilha.Id == opcao2.Substring(1, 1))
-                {
                     pontos2 += trilha.Pontostrilha;
-                }
 
                 if (trilha.Id == opcao3.Substring(0, 1))
-                {
                     pontos3 += trilha.Pontostrilha;
-                }
 
                 if (trilha.Id == opcao3.Substring(1, 1))
-                {
                     pontos3 += trilha.Pontostrilha;
-                }
             }
 
             if (pontos1 >= pontos2 && pontos1 >= pontos3)
             {
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", opcao1);
-                if (mover != "")
+                if (mover == "")
                 {
                     pontos += contarPontos(opcao1.Substring(0, 1));
                     pontos += contarPontos(opcao1.Substring(1, 1));
@@ -335,7 +338,7 @@ namespace Cant_stop
             else if (pontos2 >= pontos1 && pontos2 >= pontos3)
             {
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", opcao2);
-                if (mover != "")
+                if (mover == "")
                 {
                     pontos += contarPontos(opcao2.Substring(0, 1));
                     pontos += contarPontos(opcao2.Substring(1, 1));
@@ -344,7 +347,7 @@ namespace Cant_stop
             else
             {
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", opcao3);
-                if (mover != "")
+                if (mover == "")
                 {
                     pontos += contarPontos(opcao3.Substring(0, 1));
                     pontos += contarPontos(opcao3.Substring(1, 1));
@@ -364,9 +367,7 @@ namespace Cant_stop
                         mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", opcao3);
 
                         if (mover != "")
-                        {
                             movimenta1();
-                        }
                         else
                         {
                             pontos += pontos3;
@@ -493,7 +494,7 @@ namespace Cant_stop
                     }
                     else
                     {
-                        pontos += contarPontos(opcao6);
+                        pontos += contarPontos(opcao3);
                     }
                 }
                 else
@@ -506,36 +507,27 @@ namespace Cant_stop
                 pontos += contarPontos(opcao1);
             }
         }
-        public void movimentaAlpinista()
-        {
-            if (alpinista == 3)
-            {
-                movimenta2();
-            }
-            else
-            {
-                movimenta1Alpinista();
-            }                
-        }
 
+        //Movimenta alpinistas ja usados.
         public void movimenta1Alpinista()
         {
-            string movimento;
+            string movimento = move1OP1();
             string mover = "N";
-            movimento = move1OP1();
 
-            if (Alpinista3 == movimento || Alpinista2 == movimento)
+            if (Alpinista3 == movimento || Alpinista2 == movimento || Alpinista1 == movimento)
             {
                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1423", (movimento + "0"));
-                pontos += contarPontosA(movimento);
+                if(mover == "")
+                    pontos += contarPontosA(movimento);
             }
             else
             {
                 movimento = move1OP2();
-                if (Alpinista3 == movimento || Alpinista2 == movimento)
+                if (Alpinista3 == movimento || Alpinista2 == movimento || Alpinista1 == movimento)
                 {
                     mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1324", (movimento + "0"));
-                    pontos += contarPontosA(movimento);
+                    if (mover == "")
+                        pontos += contarPontosA(movimento);
                 }
                 else
                 {
@@ -543,31 +535,35 @@ namespace Cant_stop
                     if (Alpinista3 == movimento || Alpinista2 == movimento)
                     {
                         mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2413", (movimento + "0"));
-                        pontos += contarPontosA(movimento);
+                        if (mover == "")
+                            pontos += contarPontosA(movimento);
                     }
                     else
                     {
                         movimento = move1OP4();
-                        if (Alpinista3 == movimento || Alpinista2 == movimento)
+                        if (Alpinista3 == movimento || Alpinista2 == movimento || Alpinista1 == movimento)
                         {
                             mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "1234", (movimento + "0"));
-                            pontos += contarPontosA(movimento);
+                            if (mover == "")
+                                pontos += contarPontosA(movimento);
                         }
                         else
                         {
                             movimento = move1OP5();
-                            if (Alpinista3 == movimento || Alpinista2 == movimento)
+                            if (Alpinista3 == movimento || Alpinista2 == movimento || Alpinista1 == movimento)
                             {
                                 mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "3412", (movimento + "0"));
-                                pontos += contarPontosA(movimento);
+                                if (mover == "")
+                                    pontos += contarPontosA(movimento);
                             }
                             else
                             {
                                 movimento = move1OP6();
-                                if (Alpinista3 == movimento || Alpinista2 == movimento)
+                                if (Alpinista3 == movimento || Alpinista2 == movimento || Alpinista1 == movimento)
                                 {
                                     mover = Jogo.Mover(Lobby.IdJogador, Lobby.senhaJogador, "2314", (movimento + "0"));
-                                    pontos += contarPontosA(movimento);
+                                    if (mover == "")
+                                        pontos += contarPontosA(movimento);
                                 }
                             }
                         }
@@ -621,9 +617,21 @@ namespace Cant_stop
             }
 
             if (mover == "N")
-            {
                 movimenta2();
-            }
+        }
+
+        //Realiza o movimento.
+        public void movimentacao()
+        {
+            rolardados();
+
+            if (alpinista == 3)
+                movimenta2();
+            else
+                movimenta1Alpinista();
+
+            Alpinista3 = Alpinista2 = Alpinista1 = "N";
+            verificadordeTabuleiro();
         }
 
 
@@ -657,45 +665,48 @@ namespace Cant_stop
         private void timerVerificaVez_Tick(object sender, EventArgs e)
         {
             if (jogoCompleto())
-            {
                 timerVerificaVez.Enabled = false;
-            }
 
             if (timerVerificaVez.Enabled)
             {
-                verificarvez();
+                verificarvez();                              
 
                 if (NossaVez)
                 {
-                    Console.WriteLine("-X-X-X-PONTOS-X-X-X-");
-                    Console.WriteLine(pontos);
-                    resetaTamanho();
-                    timerTabuleiro.Enabled = false;
-                    if(alpinista != 0)
-                    {
-                        rolardados();
-                        movimentaAlpinista();
-                        verificadordeTabuleiro();
-                    }
-                    else if (pontos <= 28)
-                    {
-                        rolardados();
-                        movimentaAlpinista();
-                        verificadordeTabuleiro(); 
-                    }
-                    else
+                    if (trilhasDominadas >= 2 || (trilhasDominadas >= 1 && trilhasConquistadas >= 2))
                     {
                         acabaVez();
                         timerTabuleiro.Enabled = true;
-                        alpinista = 3;
+                        //alpinista = 0;
+                        //pontos = 30;
                     }
-                }
+                    else
+                    {
+                        Console.WriteLine("-X-X-X-PONTOS-X-X-X-");
+                        Console.WriteLine(pontos);
+                        Console.WriteLine("-X-X-X-X-X-X-X-X-X-\n-X-X-X-ALPINISTA-X-X-X-\n");
+                        Console.WriteLine(alpinista);
 
-                if (!NossaVez)
+                        timerTabuleiro.Enabled = false;
+
+                        if (alpinista != 0)
+                            movimentacao();
+                        else if (pontos <= 28)
+                            movimentacao();
+                        else
+                        {
+                            acabaVez();
+                            timerTabuleiro.Enabled = true;
+                        }
+                    }                    
+                }
+                else
                 {
-                    resetaTamanho();
+                    timerTabuleiro.Enabled = true;
                     pontos = 0;
                     alpinista = 3;
+                    trilhasDominadas = 0;
+                    Alpinista3 = Alpinista2 = Alpinista1 = "N";
                 }
             }
         }
@@ -705,26 +716,21 @@ namespace Cant_stop
         */
         public void printaImagem(int coluna, int linha)
         {
+            //Verifica a cor do de acordo com a função "validaAlpinista" criando a posição no local destinado a cada cor.
+            //Pega a posição do painel referente a coluna e linha para adicionar um jogador.
+
             Control posicao = tableLayoutPanel1.GetControlFromPosition(coluna, linha);
             PictureBox pictureBox = new PictureBox();
             posicao.Controls.Add(pictureBox);
 
             if (cor.Contains("vermelho"))
-            {
                 pictureBox.Location = new Point(0, 0);
-            }
-            if (cor.Contains("azul"))
-            {
+            else if (cor.Contains("azul"))
                 pictureBox.Location = new Point(25, 0);
-            }
-            if (cor.Contains("verde"))
-            {
+            else if (cor.Contains("verde"))
                 pictureBox.Location = new Point(0, 22);
-            }
-            if (cor.Contains("amarelo"))
-            {
+            else if (cor.Contains("amarelo"))
                 pictureBox.Location = new Point(25, 22);
-            }
 
             pictureBox.Width = 20;
             pictureBox.Height = 20;
@@ -734,25 +740,18 @@ namespace Cant_stop
         public void validaAlpinista(string player)
         {
             if (int.Parse(player) == int.Parse(Lobby.jogadorVermelho))
-            {
                 cor = "vermelho" + validaBouA;
-            }
             else if (int.Parse(player) == int.Parse(Lobby.jogadorAzul))
-            {
                 cor = "azul" + validaBouA;
-            }
             else if (int.Parse(player) == int.Parse(Lobby.jogadorVerde))
-            {
                 cor = "verde" + validaBouA;
-            }
             else if (int.Parse(player) == int.Parse(Lobby.jogadorAmarelo))
-            {
                 cor = "amarelo" + validaBouA;
-            }
-
         }
         public string somaDados(int dado1, int dado2)
         {
+            //Altera a soma dos dados para HexaDecimal.
+
             string soma = (dado1 + dado2).ToString();
 
             if (soma == "10")
@@ -766,12 +765,12 @@ namespace Cant_stop
         }
         public void rolardados()
         {
+            //Rola os dados e guarda o valor nas variaveis.
+
             dadosGlobal = Jogo.RolarDados(Lobby.IdJogador, Lobby.senhaJogador);
 
             dadosGlobal = dadosGlobal.Replace("\r", "");
             dadosGlobal = dadosGlobal.Replace("\n", "");
-
-            Console.WriteLine(dadosGlobal);
 
             if (dadosGlobal.Substring(0, 1) != "E")
             {
@@ -814,13 +813,12 @@ namespace Cant_stop
                     Alpinista1 = somaDados(coluna, 2);
                     alpinista -= 1;
                 }
-                Console.WriteLine(alpinista);
-                Console.WriteLine("-X-X-X-ALPINISTA-X-X-X-");
             }
         }
-
-        public void atualizaTrilhas(string id, int coluna, int linha)
+        public void atualizaTrilhas(string id, int coluna, int linha, string valida)
         {
+            resetaTamanho();
+
             string posicao = somaDados(coluna, 2);
             if(int.Parse(id) == Lobby.IdJogador)
             {
@@ -830,11 +828,18 @@ namespace Cant_stop
                     if(trilha.Id == posicao)
                     {
                         trilha.Tamanho -= linha;
+                        if (valida == "A")
+                        {
+                            if (trilha.Tamanho == 0)
+                                trilhasDominadas += 1;
+                        }
+                        else
+                        {
+                            if (trilha.Tamanho == 0)
+                                trilhasConquistadas += 1;
+                        }
+                        
                         trilha.Pontostrilha = 13 - trilha.Tamanho;
-                        Console.WriteLine(trilha.Id);
-                        Console.WriteLine(trilha.Tamanho);
-                        Console.WriteLine(linha);
-                        Console.WriteLine(trilha.Pontostrilha);
                     }
                 }
             }
@@ -846,9 +851,7 @@ namespace Cant_stop
             foreach (Trilhas trilha in trilhas)
             {
                 if (trilha.Id == id)
-                {
                     pontosTrilha = trilha.PontosSemAlpinista;
-                }
             }
 
             return pontosTrilha;
@@ -860,14 +863,11 @@ namespace Cant_stop
             foreach (Trilhas trilha in trilhas)
             {
                 if (trilha.Id == id)
-                {
                     pontosTrilha = trilha.PontosComAlpinista;
-                }
             }
 
             return pontosTrilha;
         }
-
         public void resetaTamanho()
         {
             foreach (Trilhas trilha in trilhas)

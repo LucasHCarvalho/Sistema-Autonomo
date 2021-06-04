@@ -22,6 +22,7 @@ namespace Cant_stop
             this.Tamanho = tamanho;
             this.PontosComAlpinista = pontosComAlpinista;
             this.PontosSemAlpinista = pontosSemAlpinista;
+
             this.Pontostrilha = 13 - tamanho;
             this.TamanhoOriginal = tamanho;
         }
